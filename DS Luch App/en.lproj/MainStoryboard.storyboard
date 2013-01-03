@@ -138,6 +138,7 @@ F-S: 1-6</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="471" y="214"/>
         </scene>
         <!--View Controller - All Restaurants-->
         <scene sceneID="Nep-zu-1mk">
