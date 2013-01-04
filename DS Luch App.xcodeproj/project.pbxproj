@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CBD4F251169738E100C44D2F /* RestaurantListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD4F250169738E100C44D2F /* RestaurantListViewController.m */; };
+		CBD4F254169738FC00C44D2F /* RestaurantDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD4F253169738FC00C44D2F /* RestaurantDetailViewController.m */; };
+		CBD4F2581697392E00C44D2F /* BasicTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD4F2571697392E00C44D2F /* BasicTableViewController.m */; };
+		CBD4F25C16973B9800C44D2F /* RestaurantListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD4F25B16973B9800C44D2F /* RestaurantListCell.m */; };
 		CBE443AE16960FBB00F993A2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBE443AD16960FBB00F993A2 /* UIKit.framework */; };
 		CBE443B016960FBB00F993A2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBE443AF16960FBB00F993A2 /* Foundation.framework */; };
 		CBE443B216960FBB00F993A2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBE443B116960FBB00F993A2 /* CoreGraphics.framework */; };
@@ -23,6 +27,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CBD4F24F169738E100C44D2F /* RestaurantListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantListViewController.h; sourceTree = "<group>"; };
+		CBD4F250169738E100C44D2F /* RestaurantListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantListViewController.m; sourceTree = "<group>"; };
+		CBD4F252169738FC00C44D2F /* RestaurantDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantDetailViewController.h; sourceTree = "<group>"; };
+		CBD4F253169738FC00C44D2F /* RestaurantDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantDetailViewController.m; sourceTree = "<group>"; };
+		CBD4F2561697392E00C44D2F /* BasicTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicTableViewController.h; sourceTree = "<group>"; };
+		CBD4F2571697392E00C44D2F /* BasicTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicTableViewController.m; sourceTree = "<group>"; };
+		CBD4F25A16973B9800C44D2F /* RestaurantListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantListCell.h; sourceTree = "<group>"; };
+		CBD4F25B16973B9800C44D2F /* RestaurantListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantListCell.m; sourceTree = "<group>"; };
 		CBE443A916960FBB00F993A2 /* DS Luch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DS Luch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBE443AD16960FBB00F993A2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CBE443AF16960FBB00F993A2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -57,6 +69,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CBD4F24D169738AC00C44D2F /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CBD4F24F169738E100C44D2F /* RestaurantListViewController.h */,
+				CBD4F250169738E100C44D2F /* RestaurantListViewController.m */,
+				CBD4F252169738FC00C44D2F /* RestaurantDetailViewController.h */,
+				CBD4F253169738FC00C44D2F /* RestaurantDetailViewController.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		CBD4F2551697390B00C44D2F /* Basic Classes */ = {
+			isa = PBXGroup;
+			children = (
+				CBD4F2561697392E00C44D2F /* BasicTableViewController.h */,
+				CBD4F2571697392E00C44D2F /* BasicTableViewController.m */,
+			);
+			name = "Basic Classes";
+			sourceTree = "<group>";
+		};
+		CBD4F25916973B7B00C44D2F /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CBD4F25A16973B9800C44D2F /* RestaurantListCell.h */,
+				CBD4F25B16973B9800C44D2F /* RestaurantListCell.m */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
 		CBE4439E16960FBB00F993A2 = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +128,9 @@
 		CBE443B316960FBB00F993A2 /* DS Luch App */ = {
 			isa = PBXGroup;
 			children = (
+				CBD4F25916973B7B00C44D2F /* Cells */,
+				CBD4F2551697390B00C44D2F /* Basic Classes */,
+				CBD4F24D169738AC00C44D2F /* View Controllers */,
 				CBE443D016961D5A00F993A2 /* Graphics */,
 				CBE443BC16960FBB00F993A2 /* AppDelegate.h */,
 				CBE443BD16960FBB00F993A2 /* AppDelegate.m */,
@@ -192,6 +236,10 @@
 				CBE443BA16960FBB00F993A2 /* main.m in Sources */,
 				CBE443BE16960FBB00F993A2 /* AppDelegate.m in Sources */,
 				CBE443CA16960FBB00F993A2 /* ViewController.m in Sources */,
+				CBD4F251169738E100C44D2F /* RestaurantListViewController.m in Sources */,
+				CBD4F254169738FC00C44D2F /* RestaurantDetailViewController.m in Sources */,
+				CBD4F2581697392E00C44D2F /* BasicTableViewController.m in Sources */,
+				CBD4F25C16973B9800C44D2F /* RestaurantListCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,6 +355,7 @@
 				CBE443CF16960FBB00F993A2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
