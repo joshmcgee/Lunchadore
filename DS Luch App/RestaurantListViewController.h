@@ -9,8 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "RestaurantListCell.h"
 
+@protocol RestaurantListViewControllerDelegate;
+
+
+
 @interface RestaurantListViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet id<RestaurantListViewControllerDelegate> delegate;
 @property (strong, nonatomic) IBOutlet UITableView *listTableView;
 @property (strong, nonatomic) IBOutlet UIButton *sortByNameButton;
 @property (strong, nonatomic) IBOutlet UIButton *sortByRatingButton;
@@ -19,5 +24,14 @@
 - (IBAction)sortByName:(id)sender;
 - (IBAction)sortByRating:(id)sender;
 - (IBAction)sortByTime:(id)sender;
+
+@end
+
+
+
+@protocol RestaurantListViewControllerDelegate <NSObject>
+
+@optional
+- (void)selectedARestaurant:(RestaurantListViewController *) viewController;
 
 @end

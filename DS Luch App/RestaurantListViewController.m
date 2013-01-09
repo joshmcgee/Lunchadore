@@ -7,6 +7,7 @@
 //
 
 #import "RestaurantListViewController.h"
+#import "RandomRestaurauntListViewController.h"
 
 @interface RestaurantListViewController ()
 
@@ -44,6 +45,7 @@
 - (IBAction)sortByTime:(id)sender {
 }
 
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -59,9 +61,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"idRestaurantCell";
-    RestaurantListCell *cell = (RestaurantListCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    // Configure the cell...
+    RestaurantListCell *cell = (RestaurantListCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];//forIndexPath:indexPath];
     
     return cell;
 }
@@ -109,14 +110,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
-    
-    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(selectedARestaurant:)])
+    {
+        [self.delegate selectedARestaurant:self];
+    }
 }
+
 @end

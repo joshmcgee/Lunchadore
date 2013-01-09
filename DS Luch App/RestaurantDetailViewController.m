@@ -35,4 +35,13 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)backButtonHit:(id)sender
+{
+    if (self.delegate && [self.delegate respondsToSelector:@selector(hitBackButtonOnDetailViewController:)])
+    {
+        [self.delegate hitBackButtonOnDetailViewController:self];
+    }
+    
+}
+
 @end
