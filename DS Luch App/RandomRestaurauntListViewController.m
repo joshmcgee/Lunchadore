@@ -64,6 +64,11 @@
     [super viewDidLoad];
 
 	// Do any additional setup after loading the view.
+    
+    self.restaurantName = [[NSBundle mainBundle] pathForResource:@"restaurantList" ofType:@"plist"];
+    NSDictionary *dic = [[NSDictionary alloc] initWithContentsOfFile:self.restaurantName ];
+    self.restaurantList = (NSArray *)[dic objectForKey:@"Restaurants"];
+    NSLog(@"%@", self.restaurantList);
 }
 
 - (void)didReceiveMemoryWarning
@@ -93,11 +98,11 @@
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
     
-    return 10;
+    return [self.restaurantList count];
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    return @"Title";
+    return self.restaurantList[row];
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
