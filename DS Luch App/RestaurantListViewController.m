@@ -27,7 +27,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    
+    self.restaurantName = [[NSBundle mainBundle] pathForResource:@"restaurantList" ofType:@"plist"];
+    NSDictionary *dic = [[NSDictionary alloc] initWithContentsOfFile:self.restaurantName ];
+    self.restaurantList = (NSArray *)[dic objectForKey:@"Restaurants"];
+    NSLog(@"%@", self.restaurantList);
 }
 
 - (void)didReceiveMemoryWarning
@@ -55,7 +59,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 3;
+    return [self.restaurantList count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -63,6 +67,7 @@
     static NSString *CellIdentifier = @"idRestaurantCell";
     
     RestaurantListCell *cell = (RestaurantListCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];//forIndexPath:indexPath];
+    cell.nameLabel.text = [self.restaurantList objectAtIndex:indexPath.row];
     
     return cell;
 }

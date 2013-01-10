@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Restaurants</key>
+	<array>
+		<string>Hungry Bear</string>
+		<string>Buffet City</string>
+		<string>Tres Chic</string>
+		<string>Long Johns Silver&apos;s</string>
+		<string>Harry&apos;s Seafood</string>
+		<string>DanZano&apos;s Pizza</string>
+		<string>Mojo&apos;s</string>
+		<string>Sushi Bistro</string>
+		<string>Southside Deli</string>
+		<string>The Melting Pot</string>
+		<string>Subway</string>
+		<string>Taco n Madre</string>
+		<string>Lunchbox</string>
+		<string>Burger King</string>
+		<string>Taco Bell</string>
+		<string>Paddock Mall Food Court</string>
+		<string>McDonald&apos;s</string>
+		<string>Latinos y Mas</string>
+		<string>Sonic</string>
+		<string>Pizza Hut</string>
+		<string>KFC</string>
+		<string>Steak n&apos; Shake</string>
+		<string>Five Guys</string>
+		<string>Waffle House</string>
+		<string>Lorito&apos;s</string>
+		<string>Cracker Barrel</string>
+		<string>Fiore&apos;s Cafe</string>
+		<string>iHop</string>
+		<string>Wendy&apos;s</string>
+		<string>Shuckle&apos;s</string>
+		<string>Popeye&apos;s</string>
+		<string>Panera Bread</string>
+		<string>Murphy&apos;s Oyster Bar</string>
+		<string>Yamato</string>
+		<string>Golden Corral</string>
+		<string>Number 1 Chinese</string>
+		<string>Carabba&apos;s</string>
+		<string>Cody&apos;s</string>
+		<string>Papa Johns</string>
+		<string>Boston Market</string>
+		<string>Lee&apos;s</string>
+		<string>Hungry Howies</string>
+		<string>Arby&apos;s</string>
+		<string>Chuck E. Cheese</string>
+		<string>Bone Fish Grill</string>
+	</array>
+</dict>
+</plist>

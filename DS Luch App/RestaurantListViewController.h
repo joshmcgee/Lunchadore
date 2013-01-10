@@ -20,6 +20,8 @@
 @property (strong, nonatomic) IBOutlet UIButton *sortByNameButton;
 @property (strong, nonatomic) IBOutlet UIButton *sortByRatingButton;
 @property (strong, nonatomic) IBOutlet UIButton *sortByTimeButton;
+@property (strong, nonatomic) IBOutlet NSString *restaurantName;
+@property (strong, nonatomic) NSArray *restaurantList;
 
 - (IBAction)sortByName:(id)sender;
 - (IBAction)sortByRating:(id)sender;
