@@ -17,8 +17,11 @@
 
 @property (weak, nonatomic) IBOutlet id<RandomRestaurauntListViewControllerDelegate> delegate;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *restaurauntListButton;
+@property (strong, nonatomic) IBOutlet UIPickerView *slotSpinner;
+@property (strong, nonatomic) IBOutlet UIButton *toggleSpinnerButton;
 
 - (IBAction)restaurauntListButtonHit:(id)sender;
+- (IBAction)toggleSpinner:(id)sender;
 
 - (void)customNavBar;
 

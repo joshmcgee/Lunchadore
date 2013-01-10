@@ -21,7 +21,7 @@
 
 - (void)setup
 {
-    
+    //[(UIView *)[[self.slotSpinner subviews] objectAtIndex:1] setHidden:YES];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -78,6 +78,31 @@
     {
         [self.delegate goToLeftJaSliderFromRandomRestaurauntListViewController:self];
     }
+}
+
+- (IBAction)toggleSpinner:(id)sender {
+}
+
+
+#pragma mark - Picker view data source
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+    
+    return 1;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    
+    return 10;
+}
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    return @"Title";
+}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    
+    NSLog(@"Selection Made");
 }
 
 
