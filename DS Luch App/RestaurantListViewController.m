@@ -8,6 +8,7 @@
 
 #import "RestaurantListViewController.h"
 #import "RandomRestaurauntListViewController.h"
+#import "JASidePanelController.h"
 
 @interface RestaurantListViewController ()
 
@@ -28,10 +29,10 @@
 {
     [super viewDidLoad];
     
+    //self.jaController =
     self.restaurantName = [[NSBundle mainBundle] pathForResource:@"restaurantList" ofType:@"plist"];
     NSDictionary *dic = [[NSDictionary alloc] initWithContentsOfFile:self.restaurantName ];
     self.restaurantList = (NSArray *)[dic objectForKey:@"Restaurants"];
-    NSLog(@"%@", self.restaurantList);
 }
 
 - (void)didReceiveMemoryWarning
@@ -115,6 +116,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSLog(@"%@", [self.restaurantList objectAtIndex:indexPath.row]);
+    self.jaControllerTitle = [self.restaurantList objectAtIndex:indexPath.row];
+    
     if (self.delegate && [self.delegate respondsToSelector:@selector(selectedARestaurant:)])
     {
         [self.delegate selectedARestaurant:self];

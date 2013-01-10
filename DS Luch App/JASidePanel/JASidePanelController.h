@@ -49,7 +49,10 @@ typedef enum _JASidePanelState {
 @property (nonatomic, strong) IBOutlet RandomRestaurauntListViewController *centerPanel; // required
 @property (nonatomic, strong) IBOutlet UIViewController *rightPanel;  // optional
 
+// Lunchadore
 @property (strong, nonatomic) RestaurantDetailViewController *detailViewController;
+@property (retain, nonatomic) NSString *restaurantName;
+
 
 // show the panels
 - (void)showLeftPanel:(BOOL)animated;

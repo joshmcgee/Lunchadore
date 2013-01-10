@@ -13,7 +13,6 @@
 
 @property (strong, nonatomic) UIBarButtonItem *storeListBarButton;
 @property (strong, nonatomic) UIButton *storeListButton;
-@property (assign, nonatomic) BOOL setListBarButtonToLeft;
 
 @end
 
@@ -26,8 +25,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    self.setListBarButtonToLeft = YES;
-    [self customNavBar];
+
 }
 
 - (void)customNavBar
@@ -44,14 +42,14 @@
         self.parentViewController.navigationItem.leftBarButtonItem = self.storeListBarButton;
         self.parentViewController.navigationItem.rightBarButtonItem = nil;
         
-        self.setListBarButtonToLeft = NO;
+     //   self.setListBarButtonToLeft = NO;
     }
     else
     {
         self.parentViewController.navigationItem.leftBarButtonItem = nil;
         self.parentViewController.navigationItem.rightBarButtonItem = self.storeListBarButton;
         
-        self.setListBarButtonToLeft = YES;
+     //   self.setListBarButtonToLeft = YES;
     }
     
     
@@ -68,7 +66,6 @@
     self.restaurantName = [[NSBundle mainBundle] pathForResource:@"restaurantList" ofType:@"plist"];
     NSDictionary *dic = [[NSDictionary alloc] initWithContentsOfFile:self.restaurantName ];
     self.restaurantList = (NSArray *)[dic objectForKey:@"Restaurants"];
-    NSLog(@"%@", self.restaurantList);
 }
 
 - (void)didReceiveMemoryWarning

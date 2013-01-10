@@ -170,7 +170,8 @@
     //self.rightPanel = [self.storyboard instantiateViewControllerWithIdentifier:@"QuestJournalViewController"];
     self.centerPanel.delegate = self;
     self.leftPanel.delegate = self;
-    
+    self.centerPanel.setListBarButtonToLeft = YES;
+    [self.centerPanel customNavBar];
 }
 
 - (void)viewDidUnload {
@@ -209,10 +210,14 @@
             case JASidePanelCenterVisible: {
                 self.leftPanelContainer.userInteractionEnabled = NO;
                 self.rightPanelContainer.userInteractionEnabled = NO;
+                self.centerPanel.setListBarButtonToLeft = YES;
+                [self.centerPanel customNavBar];
                 break;
 			}
             case JASidePanelLeftVisible: {
                 self.leftPanelContainer.userInteractionEnabled = YES;
+                self.centerPanel.setListBarButtonToLeft = NO;
+                [self.centerPanel customNavBar];
                 break;
 			}
             case JASidePanelRightVisible: {
@@ -663,8 +668,6 @@
 - (void)_showLeftPanel:(BOOL)animated bounce:(BOOL)shouldBounce
 {
     
-    [self.centerPanel customNavBar];
-    
     self.state = JASidePanelLeftVisible;
     [self _loadLeftPanel];
     
@@ -704,7 +707,6 @@
 
 - (void)_showCenterPanel:(BOOL)animated bounce:(BOOL)shouldBounce
 {
-    [self.centerPanel customNavBar];
     
     self.state = JASidePanelCenterVisible;
     
@@ -814,6 +816,8 @@
 {
     self.detailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"RestaurantDetail"];
     self.detailViewController.delegate = self;
+    self.restaurantName = self.leftPanel.jaControllerTitle;
+    [self.detailViewController setTitle:self.restaurantName];
     [self.navigationController pushViewController:self.detailViewController animated:YES];
 }
 

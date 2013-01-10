@@ -57,6 +57,7 @@
 		A50A1FFA169DED55003DB6A6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A50A1FF9169DED55003DB6A6 /* QuartzCore.framework */; };
 		A50A2025169E2DFB003DB6A6 /* navbar-btn-backward.png in Resources */ = {isa = PBXBuildFile; fileRef = A50A2024169E2DF9003DB6A6 /* navbar-btn-backward.png */; };
 		A5AA4EC1169F1C360049B4DC /* restaurantList.plist in Resources */ = {isa = PBXBuildFile; fileRef = A5AA4EC0169F1C360049B4DC /* restaurantList.plist */; };
+		A5EC38FD169F62BB00C86517 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5EC38FC169F62BA00C86517 /* MessageUI.framework */; };
 		CBD1DDC6169F29400032DEE6 /* CircularPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD1DDC5169F29400032DEE6 /* CircularPickerView.m */; };
 		CBD4F251169738E100C44D2F /* RestaurantListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD4F250169738E100C44D2F /* RestaurantListViewController.m */; };
 		CBD4F254169738FC00C44D2F /* RestaurantDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD4F253169738FC00C44D2F /* RestaurantDetailViewController.m */; };
@@ -130,6 +131,7 @@
 		A50A1FF9169DED55003DB6A6 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		A50A2024169E2DF9003DB6A6 /* navbar-btn-backward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navbar-btn-backward.png"; sourceTree = "<group>"; };
 		A5AA4EC0169F1C360049B4DC /* restaurantList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = restaurantList.plist; sourceTree = "<group>"; };
+		A5EC38FC169F62BA00C86517 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		CBD1DDC4169F29400032DEE6 /* CircularPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircularPickerView.h; sourceTree = "<group>"; };
 		CBD1DDC5169F29400032DEE6 /* CircularPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircularPickerView.m; sourceTree = "<group>"; };
 		CBD4F24F169738E100C44D2F /* RestaurantListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantListViewController.h; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5EC38FD169F62BB00C86517 /* MessageUI.framework in Frameworks */,
 				A50A1FFA169DED55003DB6A6 /* QuartzCore.framework in Frameworks */,
 				CBE443AE16960FBB00F993A2 /* UIKit.framework in Frameworks */,
 				CBE443B016960FBB00F993A2 /* Foundation.framework in Frameworks */,
@@ -187,51 +190,51 @@
 		A50A1F92169DE2AA003DB6A6 /* food */ = {
 			isa = PBXGroup;
 			children = (
-				A50A1F93169DE2AA003DB6A6 /* lunchbox.jpg */,
+				A50A1FA8169DE2AA003DB6A6 /* arbys.jpg */,
+				A50A1F97169DE2AA003DB6A6 /* bonefishGrill.png */,
+				A50A1F99169DE2AA003DB6A6 /* bostonMarket.jpg */,
+				A50A1FA6169DE2AA003DB6A6 /* buffetCity.jpeg */,
+				A50A1FB7169DE2AA003DB6A6 /* burgerKing.jpeg */,
+				A50A1FBD169DE2AA003DB6A6 /* carrabbas.jpg */,
+				A50A1F98169DE2AA003DB6A6 /* chuckECheese.jpg */,
+				A50A1FBC169DE2AA003DB6A6 /* codys.jpg */,
+				A50A1FAC169DE2AA003DB6A6 /* crackerBarrel.jpeg */,
+				A50A1FA0169DE2AA003DB6A6 /* danZanos.jpeg */,
 				A50A1F94169DE2AA003DB6A6 /* fioresCafe.gif */,
+				A50A1FEB169DE465003DB6A6 /* fireHouse.jpg */,
+				A50A1FAB169DE2AA003DB6A6 /* fiveGuys.jpeg */,
+				A50A1FB2169DE2AA003DB6A6 /* goldenCorral.jpeg */,
+				A50A1F9F169DE2AA003DB6A6 /* harrysSeafood.jpeg */,
 				A50A1F95169DE2AA003DB6A6 /* hungryBear.jpg */,
 				A50A1F96169DE2AA003DB6A6 /* hungryHowies.jpg */,
-				A50A1F97169DE2AA003DB6A6 /* bonefishGrill.png */,
-				A50A1F98169DE2AA003DB6A6 /* chuckECheese.jpg */,
-				A50A1F99169DE2AA003DB6A6 /* bostonMarket.jpg */,
-				A50A1F9A169DE2AA003DB6A6 /* tresChic.jpeg */,
-				A50A1F9B169DE2AA003DB6A6 /* paneraBread.jpeg */,
-				A50A1F9C169DE2AA003DB6A6 /* yamato.jpeg */,
+				A50A1FAD169DE2AA003DB6A6 /* iHop.jpeg */,
+				A50A1FA3169DE2AA003DB6A6 /* KFC.jpeg */,
+				A50A1FA2169DE2AA003DB6A6 /* latinosYMas.jpeg */,
+				A50A1FBE169DE2AA003DB6A6 /* lees.jpg */,
+				A50A1FBB169DE2AA003DB6A6 /* longJohnSilvers.jpeg */,
+				A50A1FA5169DE2AA003DB6A6 /* loritos.jpeg */,
+				A50A1F93169DE2AA003DB6A6 /* lunchbox.jpg */,
+				A50A1FB8169DE2AA003DB6A6 /* mcdonalds.jpeg */,
+				A50A1FB1169DE2AA003DB6A6 /* murphysOysterBar.jpeg */,
 				A50A1F9D169DE2AA003DB6A6 /* no1Chinese.jpeg */,
 				A50A1F9E169DE2AA003DB6A6 /* paddockMall.jpeg */,
-				A50A1F9F169DE2AA003DB6A6 /* harrysSeafood.jpeg */,
-				A50A1FA0169DE2AA003DB6A6 /* danZanos.jpeg */,
-				A50A1FA1169DE2AA003DB6A6 /* tacoBell.jpeg */,
-				A50A1FA2169DE2AA003DB6A6 /* latinosYMas.jpeg */,
-				A50A1FA3169DE2AA003DB6A6 /* KFC.jpeg */,
-				A50A1FA4169DE2AA003DB6A6 /* waffleHouse.jpeg */,
-				A50A1FA5169DE2AA003DB6A6 /* loritos.jpeg */,
-				A50A1FA6169DE2AA003DB6A6 /* buffetCity.jpeg */,
+				A50A1F9B169DE2AA003DB6A6 /* paneraBread.jpeg */,
 				A50A1FA7169DE2AA003DB6A6 /* papaJohns.jpg */,
-				A50A1FA8169DE2AA003DB6A6 /* arbys.jpg */,
-				A50A1FA9169DE2AA003DB6A6 /* theMojoGrill.jpeg */,
-				A50A1FAA169DE2AA003DB6A6 /* steakNShake.jpeg */,
-				A50A1FAB169DE2AA003DB6A6 /* fiveGuys.jpeg */,
-				A50A1FAC169DE2AA003DB6A6 /* crackerBarrel.jpeg */,
-				A50A1FAD169DE2AA003DB6A6 /* iHop.jpeg */,
-				A50A1FAE169DE2AA003DB6A6 /* wendys.jpeg */,
-				A50A1FAF169DE2AA003DB6A6 /* shuckles.jpeg */,
-				A50A1FB0169DE2AA003DB6A6 /* popeyes.jpeg */,
-				A50A1FB1169DE2AA003DB6A6 /* murphysOysterBar.jpeg */,
-				A50A1FB2169DE2AA003DB6A6 /* goldenCorral.jpeg */,
-				A50A1FB3169DE2AA003DB6A6 /* southsideDeli.jpeg */,
-				A50A1FB4169DE2AA003DB6A6 /* theMeltingPot.jpeg */,
-				A50A1FB5169DE2AA003DB6A6 /* subway.jpeg */,
-				A50A1FEB169DE465003DB6A6 /* fireHouse.jpg */,
-				A50A1FB6169DE2AA003DB6A6 /* sushiBistro.jpeg */,
-				A50A1FB7169DE2AA003DB6A6 /* burgerKing.jpeg */,
-				A50A1FB8169DE2AA003DB6A6 /* mcdonalds.jpeg */,
-				A50A1FB9169DE2AA003DB6A6 /* sonic.jpeg */,
 				A50A1FBA169DE2AA003DB6A6 /* pizzaHut.jpeg */,
-				A50A1FBB169DE2AA003DB6A6 /* longJohnSilvers.jpeg */,
-				A50A1FBC169DE2AA003DB6A6 /* codys.jpg */,
-				A50A1FBD169DE2AA003DB6A6 /* carrabbas.jpg */,
-				A50A1FBE169DE2AA003DB6A6 /* lees.jpg */,
+				A50A1FB0169DE2AA003DB6A6 /* popeyes.jpeg */,
+				A50A1FAF169DE2AA003DB6A6 /* shuckles.jpeg */,
+				A50A1FB9169DE2AA003DB6A6 /* sonic.jpeg */,
+				A50A1FB3169DE2AA003DB6A6 /* southsideDeli.jpeg */,
+				A50A1FAA169DE2AA003DB6A6 /* steakNShake.jpeg */,
+				A50A1FB5169DE2AA003DB6A6 /* subway.jpeg */,
+				A50A1FB6169DE2AA003DB6A6 /* sushiBistro.jpeg */,
+				A50A1FA1169DE2AA003DB6A6 /* tacoBell.jpeg */,
+				A50A1FB4169DE2AA003DB6A6 /* theMeltingPot.jpeg */,
+				A50A1FA9169DE2AA003DB6A6 /* theMojoGrill.jpeg */,
+				A50A1F9A169DE2AA003DB6A6 /* tresChic.jpeg */,
+				A50A1FA4169DE2AA003DB6A6 /* waffleHouse.jpeg */,
+				A50A1FAE169DE2AA003DB6A6 /* wendys.jpeg */,
+				A50A1F9C169DE2AA003DB6A6 /* yamato.jpeg */,
 			);
 			path = food;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 		CBE443AC16960FBB00F993A2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A5EC38FC169F62BA00C86517 /* MessageUI.framework */,
 				A50A1FF9169DED55003DB6A6 /* QuartzCore.framework */,
 				CBE443AD16960FBB00F993A2 /* UIKit.framework */,
 				CBE443AF16960FBB00F993A2 /* Foundation.framework */,

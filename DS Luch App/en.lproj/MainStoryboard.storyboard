@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2840" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="FiR-7W-lnZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="FiR-7W-lnZ">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1926"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
         <!--Restaurant Detail View Controller - Restaurant Name-->
@@ -96,6 +96,9 @@ F-S: 1-6</string>
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="chooseButtonHit:" destination="2" eventType="touchUpInside" id="3EI-Bk-Elt"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="28" sectionHeaderHeight="22" sectionFooterHeight="22" id="m3f-9X-xlG">
                                 <rect key="frame" x="187" y="160" width="127" height="220"/>
@@ -127,6 +130,9 @@ F-S: 1-6</string>
                     </view>
                     <navigationItem key="navigationItem" title="Restaurant Name" id="NmJ-b3-tOR"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="chooseThisButton" destination="MHO-eQ-T55" id="CR0-Fa-Bvc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
@@ -281,59 +287,6 @@ F-S: 1-6</string>
         <image name="2Star.png" width="242" height="48"/>
         <image name="4Star.png" width="242" height="48"/>
     </resources>
-    <classes>
-        <class className="CircularPickerView" superclassName="UIPickerView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CircularPickerView.h"/>
-        </class>
-        <class className="JASidePanelController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/JASidePanelController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="centerPanel" candidateClass="RandomRestaurauntListViewController"/>
-                <relationship kind="outlet" name="leftPanel" candidateClass="RestaurantListViewController"/>
-                <relationship kind="outlet" name="rightPanel" candidateClass="UIViewController"/>
-            </relationships>
-        </class>
-        <class className="RandomRestaurauntListViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RandomRestaurauntListViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="restaurauntListButtonHit:"/>
-                <relationship kind="action" name="toggleSpinner:"/>
-                <relationship kind="outlet" name="delegate"/>
-                <relationship kind="outlet" name="restaurauntListButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="slotSpinner" candidateClass="UIPickerView"/>
-                <relationship kind="outlet" name="toggleSpinnerButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="RestaurantDetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RestaurantDetailViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="backButtonHit:"/>
-                <relationship kind="outlet" name="backButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="delegate"/>
-            </relationships>
-        </class>
-        <class className="RestaurantListCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RestaurantListCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="timeLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="RestaurantListViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RestaurantListViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="sortByName:"/>
-                <relationship kind="action" name="sortByRating:"/>
-                <relationship kind="action" name="sortByTime:"/>
-                <relationship kind="outlet" name="delegate"/>
-                <relationship kind="outlet" name="listTableView" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="restaurantName" candidateClass="NSString"/>
-                <relationship kind="outlet" name="sortByNameButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="sortByRatingButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="sortByTimeButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

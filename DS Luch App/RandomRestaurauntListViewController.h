@@ -21,6 +21,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *toggleSpinnerButton;
 @property (strong, nonatomic) NSArray *restaurantList;
 @property (strong, nonatomic) NSString *restaurantName;
+@property (assign, nonatomic) BOOL setListBarButtonToLeft;
 
 - (IBAction)restaurauntListButtonHit:(id)sender;
 - (IBAction)toggleSpinner:(id)sender;
