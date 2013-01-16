@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Restaurants</key>
+	<array>
+		<string>hungryBear</string>
+		<string>buffetCity</string>
+		<string>tresChic</string>
+		<string>longJohnsSilvers</string>
+		<string>harrysSeafood</string>
+		<string>danZanos</string>
+		<string>theMojoGrill</string>
+		<string>sushiBistro</string>
+		<string>southsideDeli</string>
+		<string>theMeltingPot</string>
+		<string>subway</string>
+		<string>tacoNMadre</string>
+		<string>lunchbox</string>
+		<string>burgerKing</string>
+		<string>tacoBell</string>
+		<string>paddockMall</string>
+		<string>mcdonalds</string>
+		<string>latinosYMas</string>
+		<string>sonic</string>
+		<string>pizzaHut</string>
+		<string>KFC</string>
+		<string>steakNShake</string>
+		<string>fiveGuys</string>
+		<string>waffleHouse</string>
+		<string>loritos</string>
+		<string>crackerBarrel</string>
+		<string>fiores</string>
+		<string>iHop</string>
+		<string>wendys</string>
+		<string>shuckles</string>
+		<string>popeyes</string>
+		<string>paneraBread</string>
+		<string>murphysOysterBar</string>
+		<string>yamato</string>
+		<string>goldenCorral</string>
+		<string>no1Chinese</string>
+		<string>carrabbas</string>
+		<string>codys</string>
+		<string>papaJohns</string>
+		<string>bostonMarket</string>
+		<string>lees</string>
+		<string>hungryHowies</string>
+		<string>arbys</string>
+		<string>chuckECheese</string>
+		<string>bonefishGrill</string>
+	</array>
+</dict>
+</plist>

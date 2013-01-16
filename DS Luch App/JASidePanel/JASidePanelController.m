@@ -816,9 +816,15 @@
 {
     self.detailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"RestaurantDetail"];
     self.detailViewController.delegate = self;
-    self.restaurantName = self.leftPanel.jaControllerTitle;
-    [self.detailViewController setTitle:self.restaurantName];
+    
+    NSString *restaurantName = self.leftPanel.jaControllerTitle;
+    [self.detailViewController setTitle:restaurantName];
+    
+    NSString *imageName = self.leftPanel.jaControllerImage;
+    UIImage *restaurantImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@.jpg", imageName]];
+    
     [self.navigationController pushViewController:self.detailViewController animated:YES];
+    self.detailViewController.restaurantImage.image = restaurantImage;
 }
 
 - (void)hitBackButtonOnDetailViewController:(RestaurantDetailViewController *) viewController

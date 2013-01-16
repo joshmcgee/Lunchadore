@@ -28,11 +28,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    //self.jaController =
+
     self.restaurantName = [[NSBundle mainBundle] pathForResource:@"restaurantList" ofType:@"plist"];
     NSDictionary *dic = [[NSDictionary alloc] initWithContentsOfFile:self.restaurantName ];
     self.restaurantList = (NSArray *)[dic objectForKey:@"Restaurants"];
+    
+    NSString *imageName = [[NSBundle mainBundle] pathForResource:@"restaurantImageList" ofType:@"plist"];
+    NSDictionary *imageDic = [[NSDictionary alloc] initWithContentsOfFile:imageName];
+    self.imageList = (NSArray *)[imageDic objectForKey:@"Restaurants"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -116,8 +119,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"%@", [self.restaurantList objectAtIndex:indexPath.row]);
+    //NSLog(@"%@", [self.restaurantList objectAtIndex:indexPath.row]);
     self.jaControllerTitle = [self.restaurantList objectAtIndex:indexPath.row];
+    self.jaControllerImage = [self.imageList objectAtIndex:indexPath.row];
+    
+
     
     if (self.delegate && [self.delegate respondsToSelector:@selector(selectedARestaurant:)])
     {

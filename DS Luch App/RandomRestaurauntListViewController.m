@@ -41,15 +41,11 @@
     {
         self.parentViewController.navigationItem.leftBarButtonItem = self.storeListBarButton;
         self.parentViewController.navigationItem.rightBarButtonItem = nil;
-        
-     //   self.setListBarButtonToLeft = NO;
     }
     else
     {
         self.parentViewController.navigationItem.leftBarButtonItem = nil;
         self.parentViewController.navigationItem.rightBarButtonItem = self.storeListBarButton;
-        
-     //   self.setListBarButtonToLeft = YES;
     }
     
     
@@ -82,7 +78,17 @@
     }
 }
 
-- (IBAction)toggleSpinner:(id)sender {
+- (IBAction)toggleSpinner:(id)sender
+{
+//    int randomNum = random() % [self.restaurantList count];
+//    int currentRow = 0;
+//    
+//    for (; randomNum > 0; randomNum--)
+//    {
+//        [self.slotSpinner selectRow:currentRow inComponent:0 animated:YES];
+//        //[self.slotSpinner reloadComponent:0];
+//        currentRow += 1;
+//    }
 }
 
 
@@ -102,9 +108,11 @@
     return self.restaurantList[row];
 }
 
-- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    
-    NSLog(@"Selection Made");
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+{
+    // Hmmmm....
+    [self toggleSpinner:self];
+    NSLog(@"MADE A SELECTION");
 }
 
 

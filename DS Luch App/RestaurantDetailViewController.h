@@ -19,9 +19,25 @@
 @property (weak, nonatomic) IBOutlet id<RestaurantDetailViewControllerDelegate> delegate;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *backButton;
 @property (strong, nonatomic) IBOutlet UIButton *chooseThisButton;
+@property (strong, nonatomic) IBOutlet UIImageView *restaurantImage;
+@property (strong, nonatomic) IBOutlet UIImage *starImage;
+@property (strong, nonatomic) IBOutlet UIImage *starImageOutline;
+
+@property (strong, nonatomic) IBOutlet UIButton *oneStarButton;
+@property (strong, nonatomic) IBOutlet UIButton *twoStarButton;
+@property (strong, nonatomic) IBOutlet UIButton *threeStarButton;
+@property (strong, nonatomic) IBOutlet UIButton *fourStarButton;
+@property (strong, nonatomic) IBOutlet UIButton *fiveStarButton;
+
 
 - (IBAction)backButtonHit:(id)sender;
 - (IBAction)chooseButtonHit:(id)sender;
+
+- (IBAction)oneStarButtonHit:(id)sender;
+- (IBAction)twoStarButtonHit:(id)sender;
+- (IBAction)threeStarButtonHit:(id)sender;
+- (IBAction)fourStarButtonHit:(id)sender;
+- (IBAction)fiveStarButtonHit:(id)sender;
 
 @end
 

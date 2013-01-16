@@ -51,7 +51,6 @@ typedef enum _JASidePanelState {
 
 // Lunchadore
 @property (strong, nonatomic) RestaurantDetailViewController *detailViewController;
-@property (retain, nonatomic) NSString *restaurantName;
 
 
 // show the panels
