@@ -25,39 +25,13 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-
-}
-
-- (void)customNavBar
-{
-    
-    self.storeListButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 10, 60, 30)];
-    [self.storeListButton addTarget:self action:@selector(restaurauntListButtonHit:) forControlEvents:UIControlEventTouchUpInside];
-    [self.storeListButton setBackgroundImage:[[UIImage imageNamed:@"navbar-btn-backward"]resizableImageWithCapInsets:UIEdgeInsetsMake(0.0f, 16.0f, 0.0, 6.0f)] forState:UIControlStateNormal];
-    
-    self.storeListBarButton = [[UIBarButtonItem alloc] initWithCustomView:self.storeListButton];
-    
-    if (self.setListBarButtonToLeft)
-    {
-        self.parentViewController.navigationItem.leftBarButtonItem = self.storeListBarButton;
-        self.parentViewController.navigationItem.rightBarButtonItem = nil;
-    }
-    else
-    {
-        self.parentViewController.navigationItem.leftBarButtonItem = nil;
-        self.parentViewController.navigationItem.rightBarButtonItem = self.storeListBarButton;
-    }
-    
     
 }
-
 
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-	// Do any additional setup after loading the view.
     
     self.restaurantName = [[NSBundle mainBundle] pathForResource:@"restaurantList" ofType:@"plist"];
     NSDictionary *dic = [[NSDictionary alloc] initWithContentsOfFile:self.restaurantName ];
@@ -67,17 +41,7 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
-- (IBAction)restaurauntListButtonHit:(id)sender
-{
-    if ((self.delegate) && ([self.delegate respondsToSelector:@selector(goToLeftJaSliderFromRandomRestaurauntListViewController:)]))
-    {
-        [self.delegate goToLeftJaSliderFromRandomRestaurauntListViewController:self];
-    }
-}
-
 - (IBAction)toggleSpinner:(id)sender
 {
 //    int randomNum = random() % [self.restaurantList count];

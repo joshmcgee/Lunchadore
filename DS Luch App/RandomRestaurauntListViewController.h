@@ -26,8 +26,6 @@
 - (IBAction)restaurauntListButtonHit:(id)sender;
 - (IBAction)toggleSpinner:(id)sender;
 
-- (void)customNavBar;
-
 @end
 
 

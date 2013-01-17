@@ -10,15 +10,43 @@
 
 @interface RestaurantDetailViewController ()
 
+@property (assign, nonatomic) int rating;
+
 @end
 
 @implementation RestaurantDetailViewController
 
+- (void) setup
+{
+    self.rating = 0;
+    self.starImage = [UIImage imageNamed:@"2Star.png"];
+    self.starImageOutline = [UIImage imageNamed:@"2StarSkeleton.png"];
+    
+    // TEMP STRING
+    NSString *emailString = @"josh@dsmedialabs.com";
+    
+    
+    self.emailArray = [[NSArray alloc] initWithObjects:emailString, nil]; // Gary J: later we can do initWithArray: and pass in the emails from the account
+    
+    [self ratingSystem:0];
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
+    if (self)
+    {
+        [self setup];
+    }
+    return self;
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self)
+    {
+        [self setup];
     }
     return self;
 }
@@ -27,20 +55,12 @@
 {
     [super viewDidLoad];
     
-    self.starImage = [UIImage imageNamed:@"2Star.png"];
-    self.starImageOutline = [UIImage imageNamed:@"2StarSkeleton.png"];
-    
-    [self.oneStarButton setImage:self.starImageOutline forState:UIControlStateNormal];
-    [self.twoStarButton setImage:self.starImageOutline forState:UIControlStateNormal];
-    [self.threeStarButton setImage:self.starImageOutline forState:UIControlStateNormal];
-    [self.fourStarButton setImage:self.starImageOutline forState:UIControlStateNormal];
-    [self.fiveStarButton setImage:self.starImageOutline forState:UIControlStateNormal];
+    [self setup];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 
@@ -80,54 +100,101 @@
         [composer setMessageBody:(NSString*)messageBodyText isHTML:YES];
         composer.title = @"Lunchadore";
         [composer setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
+        [composer setToRecipients:self.emailArray];
         //[self presentModalViewController:composer animated:YES];
         [self presentViewController:composer animated:YES completion:nil];
     }
 }
 
+- (void)ratingSystem:(int)rating
+{
+    if (rating == 0)
+    {
+        [self.oneStarButton setImage:self.starImageOutline forState:UIControlStateNormal];
+        [self.twoStarButton setImage:self.starImageOutline forState:UIControlStateNormal];
+        [self.threeStarButton setImage:self.starImageOutline forState:UIControlStateNormal];
+        [self.fourStarButton setImage:self.starImageOutline forState:UIControlStateNormal];
+        [self.fiveStarButton setImage:self.starImageOutline forState:UIControlStateNormal];
+    }
+    else if (rating == 1)
+    {
+        [self.oneStarButton setImage:self.starImage forState:UIControlStateNormal];
+        [self.twoStarButton setImage:self.starImageOutline forState:UIControlStateNormal];
+        [self.threeStarButton setImage:self.starImageOutline forState:UIControlStateNormal];
+        [self.fourStarButton setImage:self.starImageOutline forState:UIControlStateNormal];
+        [self.fiveStarButton setImage:self.starImageOutline forState:UIControlStateNormal];
+        
+        self.rating = 1;
+    }
+    else if (rating == 2)
+    {
+        
+        [self.oneStarButton setImage:self.starImage forState:UIControlStateNormal];
+        [self.twoStarButton setImage:self.starImage forState:UIControlStateNormal];
+        [self.threeStarButton setImage:self.starImageOutline forState:UIControlStateNormal];
+        [self.fourStarButton setImage:self.starImageOutline forState:UIControlStateNormal];
+        [self.fiveStarButton setImage:self.starImageOutline forState:UIControlStateNormal];
+        
+        self.rating = 2;
+    }
+    else if (rating == 3)
+    {
+        [self.oneStarButton setImage:self.starImage forState:UIControlStateNormal];
+        [self.twoStarButton setImage:self.starImage forState:UIControlStateNormal];
+        [self.threeStarButton setImage:self.starImage forState:UIControlStateNormal];
+        [self.fourStarButton setImage:self.starImageOutline forState:UIControlStateNormal];
+        [self.fiveStarButton setImage:self.starImageOutline forState:UIControlStateNormal];
+        
+        self.rating = 3;
+    }
+    else if (rating == 4)
+    {
+        [self.oneStarButton setImage:self.starImage forState:UIControlStateNormal];
+        [self.twoStarButton setImage:self.starImage forState:UIControlStateNormal];
+        [self.threeStarButton setImage:self.starImage forState:UIControlStateNormal];
+        [self.fourStarButton setImage:self.starImage forState:UIControlStateNormal];
+        [self.fiveStarButton setImage:self.starImageOutline forState:UIControlStateNormal];
+        
+        self.rating = 4;
+    }
+    else if (rating == 5)
+    {
+        [self.oneStarButton setImage:self.starImage forState:UIControlStateNormal];
+        [self.twoStarButton setImage:self.starImage forState:UIControlStateNormal];
+        [self.threeStarButton setImage:self.starImage forState:UIControlStateNormal];
+        [self.fourStarButton setImage:self.starImage forState:UIControlStateNormal];
+        [self.fiveStarButton setImage:self.starImage forState:UIControlStateNormal];
+        
+        self.rating = 5;
+    }
+    
+//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+//    [defaults setInteger:self.rating forKey:@"rating"];
+}
+
 - (IBAction)oneStarButtonHit:(id)sender
 {
-    [self.oneStarButton setImage:self.starImage forState:UIControlStateNormal];
-    [self.twoStarButton setImage:self.starImageOutline forState:UIControlStateNormal];
-    [self.threeStarButton setImage:self.starImageOutline forState:UIControlStateNormal];
-    [self.fourStarButton setImage:self.starImageOutline forState:UIControlStateNormal];
-    [self.fiveStarButton setImage:self.starImageOutline forState:UIControlStateNormal];
+    [self ratingSystem:1];
 }
 
 - (IBAction)twoStarButtonHit:(id)sender
 {
-    [self.oneStarButton setImage:self.starImage forState:UIControlStateNormal];
-    [self.twoStarButton setImage:self.starImage forState:UIControlStateNormal];
-    [self.threeStarButton setImage:self.starImageOutline forState:UIControlStateNormal];
-    [self.fourStarButton setImage:self.starImageOutline forState:UIControlStateNormal];
-    [self.fiveStarButton setImage:self.starImageOutline forState:UIControlStateNormal];
+    [self ratingSystem:2];
 }
 
 - (IBAction)threeStarButtonHit:(id)sender
 {
-    [self.oneStarButton setImage:self.starImage forState:UIControlStateNormal];
-    [self.twoStarButton setImage:self.starImage forState:UIControlStateNormal];
-    [self.threeStarButton setImage:self.starImage forState:UIControlStateNormal];
-    [self.fourStarButton setImage:self.starImageOutline forState:UIControlStateNormal];
-    [self.fiveStarButton setImage:self.starImageOutline forState:UIControlStateNormal];
+    [self ratingSystem:3];
 }
 
 - (IBAction)fourStarButtonHit:(id)sender
 {
-    [self.oneStarButton setImage:self.starImage forState:UIControlStateNormal];
-    [self.twoStarButton setImage:self.starImage forState:UIControlStateNormal];
-    [self.threeStarButton setImage:self.starImage forState:UIControlStateNormal];
-    [self.fourStarButton setImage:self.starImage forState:UIControlStateNormal];
-    [self.fiveStarButton setImage:self.starImageOutline forState:UIControlStateNormal];
+    [self ratingSystem:4];
 }
 
 - (IBAction)fiveStarButtonHit:(id)sender
 {
-    [self.oneStarButton setImage:self.starImage forState:UIControlStateNormal];
-    [self.twoStarButton setImage:self.starImage forState:UIControlStateNormal];
-    [self.threeStarButton setImage:self.starImage forState:UIControlStateNormal];
-    [self.fourStarButton setImage:self.starImage forState:UIControlStateNormal];
-    [self.fiveStarButton setImage:self.starImage forState:UIControlStateNormal];
+    [self ratingSystem:5];
 }
 
 -(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error

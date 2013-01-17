@@ -22,13 +22,14 @@
 @property (strong, nonatomic) IBOutlet UIImageView *restaurantImage;
 @property (strong, nonatomic) IBOutlet UIImage *starImage;
 @property (strong, nonatomic) IBOutlet UIImage *starImageOutline;
+@property (strong, nonatomic) IBOutlet UINavigationItem *navBar;
 
 @property (strong, nonatomic) IBOutlet UIButton *oneStarButton;
 @property (strong, nonatomic) IBOutlet UIButton *twoStarButton;
 @property (strong, nonatomic) IBOutlet UIButton *threeStarButton;
 @property (strong, nonatomic) IBOutlet UIButton *fourStarButton;
 @property (strong, nonatomic) IBOutlet UIButton *fiveStarButton;
-
+@property (strong, nonatomic) IBOutlet NSArray *emailArray;
 
 - (IBAction)backButtonHit:(id)sender;
 - (IBAction)chooseButtonHit:(id)sender;

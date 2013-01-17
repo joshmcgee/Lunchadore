@@ -39,6 +39,7 @@
 @property (nonatomic, strong, readwrite) UIView *leftPanelContainer;
 @property (nonatomic, strong, readwrite) UIView *rightPanelContainer;
 @property (nonatomic, strong, readwrite) UIView *centerPanelContainer;
+@property (nonatomic, assign) BOOL leftDetailView;
 
 // setup
 - (void)_baseInit;
@@ -140,8 +141,10 @@
 
 #pragma mark - UIViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
+    
     self.view.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     
     self.centerPanelContainer = [[UIView alloc] initWithFrame:self.view.bounds];
@@ -165,13 +168,13 @@
     [self.view bringSubviewToFront:self.centerPanelContainer];
     
 
-    self.centerPanel = [self.storyboard instantiateViewControllerWithIdentifier:@"RandomRestaurauntList"];
+    self.centerPanel = [self.storyboard instantiateViewControllerWithIdentifier:@"NavRandomRestaurauntList"];
     self.leftPanel = [self.storyboard instantiateViewControllerWithIdentifier:@"RestaurantList"];
     //self.rightPanel = [self.storyboard instantiateViewControllerWithIdentifier:@"QuestJournalViewController"];
     self.centerPanel.delegate = self;
     self.leftPanel.delegate = self;
-    self.centerPanel.setListBarButtonToLeft = YES;
-    [self.centerPanel customNavBar];
+    //self.centerPanel.setListBarButtonToLeft = YES;
+    //[self.centerPanel customNavBar];
 }
 
 - (void)viewDidUnload {
@@ -196,7 +199,7 @@
 }
 
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
-    self.centerPanelContainer.frame = [self _adjustCenterFrame];	
+    self.centerPanelContainer.frame = [self _adjustCenterFrame];
     [self _layoutSideContainers:YES duration:duration];
     [self styleContainer:self.centerPanelContainer animate:YES duration:duration];	
 }
@@ -210,14 +213,10 @@
             case JASidePanelCenterVisible: {
                 self.leftPanelContainer.userInteractionEnabled = NO;
                 self.rightPanelContainer.userInteractionEnabled = NO;
-                self.centerPanel.setListBarButtonToLeft = YES;
-                [self.centerPanel customNavBar];
                 break;
 			}
             case JASidePanelLeftVisible: {
                 self.leftPanelContainer.userInteractionEnabled = YES;
-                self.centerPanel.setListBarButtonToLeft = NO;
-                [self.centerPanel customNavBar];
                 break;
 			}
             case JASidePanelRightVisible: {
@@ -627,6 +626,15 @@
     switch (self.state) {
         case JASidePanelCenterVisible:
         {
+            if (!self.leftDetailView)
+            {
+                frame.origin.y = -20.0f;
+                frame.size.height = self.view.bounds.size.height + 20;
+            }
+            else
+            {
+                frame.origin.y = 0.0f;
+            }
             frame.origin.x = 0.0f;
             if (self.style == JASidePanelMultipleActive) {
                 frame.size.width = self.view.bounds.size.width;
@@ -635,6 +643,15 @@
 		}
         case JASidePanelLeftVisible:
         {
+            if (!self.leftDetailView)
+            {
+                frame.origin.y = -20.0f;
+                frame.size.height = self.view.bounds.size.height + 20;
+            }
+            else
+            {
+                frame.origin.y = 0.0f;
+            }
             frame.origin.x = self.leftVisibleWidth;
             if (self.style == JASidePanelMultipleActive) {
                 frame.size.width = self.view.bounds.size.width - self.leftVisibleWidth;
@@ -807,10 +824,10 @@
 
 #pragma mark - delegates
 
-- (void)goToLeftJaSliderFromRandomRestaurauntListViewController:(RandomRestaurauntListViewController *) randomRestaurauntList
-{
-    [self toggleLeftPanel:self];
-}
+//- (void)goToLeftJaSliderFromRandomRestaurauntListViewController:(RandomRestaurauntListViewController *) randomRestaurauntList
+//{
+//    [self toggleLeftPanel:self];
+//}
 
 - (void)selectedARestaurant:(RestaurantListViewController *) viewController
 {
@@ -818,18 +835,23 @@
     self.detailViewController.delegate = self;
     
     NSString *restaurantName = self.leftPanel.jaControllerTitle;
-    [self.detailViewController setTitle:restaurantName];
     
     NSString *imageName = self.leftPanel.jaControllerImage;
     UIImage *restaurantImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@.jpg", imageName]];
     
+    self.detailViewController.navBar.title = restaurantName;
+    
     [self.navigationController pushViewController:self.detailViewController animated:YES];
+    
     self.detailViewController.restaurantImage.image = restaurantImage;
 }
 
 - (void)hitBackButtonOnDetailViewController:(RestaurantDetailViewController *) viewController
 {
+    self.leftDetailView = YES;
     [self.navigationController popViewControllerAnimated:YES];
+    [self showCenterPanel:NO];
+    [self performSelector:@selector(toggleLeftPanel:) withObject:nil afterDelay:0.3f];
 }
 
 

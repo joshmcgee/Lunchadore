@@ -40,14 +40,15 @@ typedef enum _JASidePanelState {
     JASidePanelRightVisible
 } JASidePanelState;
 
-@interface JASidePanelController : UIViewController<UIGestureRecognizerDelegate, RandomRestaurauntListViewControllerDelegate, RestaurantListViewControllerDelegate, RandomRestaurauntListViewControllerDelegate>
+@interface JASidePanelController : UIViewController<UIGestureRecognizerDelegate, RestaurantListViewControllerDelegate, RandomRestaurauntListViewControllerDelegate>
 
 #pragma mark - Usage
 
 // set the panels
 @property (nonatomic, strong) IBOutlet RestaurantListViewController *leftPanel;   // optional
-@property (nonatomic, strong) IBOutlet RandomRestaurauntListViewController *centerPanel; // required
+@property (nonatomic, strong) IBOutlet UINavigationController *centerPanel; // required
 @property (nonatomic, strong) IBOutlet UIViewController *rightPanel;  // optional
+//@property (nonatomic, strong) IBOutlet RestaurantListViewController *restaurantListViewController;
 
 // Lunchadore
 @property (strong, nonatomic) RestaurantDetailViewController *detailViewController;
