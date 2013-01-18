@@ -10,15 +10,13 @@
 
 @interface RestaurantDetailViewController ()
 
-@property (assign, nonatomic) int rating;
-
 @end
 
 @implementation RestaurantDetailViewController
 
 - (void) setup
 {
-    self.rating = 0;
+    //self.rating = 0;
     self.starImage = [UIImage imageNamed:@"2Star.png"];
     self.starImageOutline = [UIImage imageNamed:@"2StarSkeleton.png"];
     
@@ -28,7 +26,7 @@
     
     self.emailArray = [[NSArray alloc] initWithObjects:emailString, nil]; // Gary J: later we can do initWithArray: and pass in the emails from the account
     
-    [self ratingSystem:0];
+    [self ratingSystem:self.rating];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -36,7 +34,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self)
     {
-        [self setup];
+   //     [self setup];
     }
     return self;
 }
@@ -46,16 +44,20 @@
     self = [super initWithCoder:aDecoder];
     if (self)
     {
-        [self setup];
+     //   [self setup];
     }
     return self;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self setup];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    [self setup];
 }
 
 - (void)didReceiveMemoryWarning
@@ -106,9 +108,11 @@
     }
 }
 
-- (void)ratingSystem:(int)rating
+- (void)ratingSystem:(NSNumber *)rating
 {
-    if (rating == 0)
+    //NSString * path = [self.ratingIndex stringByAppendingPathComponent:@"restaurantRatingList.plist"];
+    
+    if ([rating intValue] == 0)
     {
         [self.oneStarButton setImage:self.starImageOutline forState:UIControlStateNormal];
         [self.twoStarButton setImage:self.starImageOutline forState:UIControlStateNormal];
@@ -116,17 +120,15 @@
         [self.fourStarButton setImage:self.starImageOutline forState:UIControlStateNormal];
         [self.fiveStarButton setImage:self.starImageOutline forState:UIControlStateNormal];
     }
-    else if (rating == 1)
+    else if ([rating intValue] == 1)
     {
         [self.oneStarButton setImage:self.starImage forState:UIControlStateNormal];
         [self.twoStarButton setImage:self.starImageOutline forState:UIControlStateNormal];
         [self.threeStarButton setImage:self.starImageOutline forState:UIControlStateNormal];
         [self.fourStarButton setImage:self.starImageOutline forState:UIControlStateNormal];
         [self.fiveStarButton setImage:self.starImageOutline forState:UIControlStateNormal];
-        
-        self.rating = 1;
     }
-    else if (rating == 2)
+    else if ([rating intValue] == 2)
     {
         
         [self.oneStarButton setImage:self.starImage forState:UIControlStateNormal];
@@ -134,30 +136,24 @@
         [self.threeStarButton setImage:self.starImageOutline forState:UIControlStateNormal];
         [self.fourStarButton setImage:self.starImageOutline forState:UIControlStateNormal];
         [self.fiveStarButton setImage:self.starImageOutline forState:UIControlStateNormal];
-        
-        self.rating = 2;
     }
-    else if (rating == 3)
+    else if ([rating intValue] == 3)
     {
         [self.oneStarButton setImage:self.starImage forState:UIControlStateNormal];
         [self.twoStarButton setImage:self.starImage forState:UIControlStateNormal];
         [self.threeStarButton setImage:self.starImage forState:UIControlStateNormal];
         [self.fourStarButton setImage:self.starImageOutline forState:UIControlStateNormal];
         [self.fiveStarButton setImage:self.starImageOutline forState:UIControlStateNormal];
-        
-        self.rating = 3;
     }
-    else if (rating == 4)
+    else if ([rating intValue] == 4)
     {
         [self.oneStarButton setImage:self.starImage forState:UIControlStateNormal];
         [self.twoStarButton setImage:self.starImage forState:UIControlStateNormal];
         [self.threeStarButton setImage:self.starImage forState:UIControlStateNormal];
         [self.fourStarButton setImage:self.starImage forState:UIControlStateNormal];
         [self.fiveStarButton setImage:self.starImageOutline forState:UIControlStateNormal];
-        
-        self.rating = 4;
     }
-    else if (rating == 5)
+    else if ([rating intValue] == 5)
     {
         [self.oneStarButton setImage:self.starImage forState:UIControlStateNormal];
         [self.twoStarButton setImage:self.starImage forState:UIControlStateNormal];
@@ -165,7 +161,9 @@
         [self.fourStarButton setImage:self.starImage forState:UIControlStateNormal];
         [self.fiveStarButton setImage:self.starImage forState:UIControlStateNormal];
         
-        self.rating = 5;
+        //[NSKeyedArchiver archiveRootObject:self.rating toFile:path];
+        //NSData *plistData = [NSPropertyListSerialization dataFromPropertyList:@"restaurantRatingList" format:NSNumberFormatterNoStyle errorDescription:nil];
+        //[plistData writeToFile:path atomically: YES];
     }
     
 //    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -174,27 +172,32 @@
 
 - (IBAction)oneStarButtonHit:(id)sender
 {
-    [self ratingSystem:1];
+    self.rating = [NSNumber numberWithInt:1];
+    [self ratingSystem:self.rating];
 }
 
 - (IBAction)twoStarButtonHit:(id)sender
 {
-    [self ratingSystem:2];
+    self.rating = [NSNumber numberWithInt:2];
+    [self ratingSystem:self.rating];
 }
 
 - (IBAction)threeStarButtonHit:(id)sender
 {
-    [self ratingSystem:3];
+    self.rating = [NSNumber numberWithInt:3];
+    [self ratingSystem:self.rating];
 }
 
 - (IBAction)fourStarButtonHit:(id)sender
 {
-    [self ratingSystem:4];
+    self.rating = [NSNumber numberWithInt:1];
+    [self ratingSystem:self.rating];
 }
 
 - (IBAction)fiveStarButtonHit:(id)sender
 {
-    [self ratingSystem:5];
+    self.rating = [NSNumber numberWithInt:5];
+    [self ratingSystem:self.rating];
 }
 
 -(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error

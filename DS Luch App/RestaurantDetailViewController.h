@@ -18,18 +18,20 @@
 
 @property (weak, nonatomic) IBOutlet id<RestaurantDetailViewControllerDelegate> delegate;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *backButton;
-@property (strong, nonatomic) IBOutlet UIButton *chooseThisButton;
+@property (strong, nonatomic) IBOutlet UINavigationItem *navBar;
 @property (strong, nonatomic) IBOutlet UIImageView *restaurantImage;
 @property (strong, nonatomic) IBOutlet UIImage *starImage;
 @property (strong, nonatomic) IBOutlet UIImage *starImageOutline;
-@property (strong, nonatomic) IBOutlet UINavigationItem *navBar;
 
+@property (strong, nonatomic) IBOutlet UIButton *chooseThisButton;
 @property (strong, nonatomic) IBOutlet UIButton *oneStarButton;
 @property (strong, nonatomic) IBOutlet UIButton *twoStarButton;
 @property (strong, nonatomic) IBOutlet UIButton *threeStarButton;
 @property (strong, nonatomic) IBOutlet UIButton *fourStarButton;
 @property (strong, nonatomic) IBOutlet UIButton *fiveStarButton;
 @property (strong, nonatomic) IBOutlet NSArray *emailArray;
+@property (strong, nonatomic) IBOutlet NSNumber *rating;
+//@property (strong, nonatomic) IBOutlet NSString *ratingIndex;
 
 - (IBAction)backButtonHit:(id)sender;
 - (IBAction)chooseButtonHit:(id)sender;

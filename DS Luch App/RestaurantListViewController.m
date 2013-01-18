@@ -36,6 +36,10 @@
     NSString *imageName = [[NSBundle mainBundle] pathForResource:@"restaurantImageList" ofType:@"plist"];
     NSDictionary *imageDic = [[NSDictionary alloc] initWithContentsOfFile:imageName];
     self.imageList = (NSArray *)[imageDic objectForKey:@"Restaurants"];
+    
+    NSString *rating = [[NSBundle mainBundle] pathForResource:@"restaurantRatingList" ofType:@"plist"];
+    NSDictionary *ratingDic = [[NSDictionary alloc] initWithContentsOfFile:rating];
+    self.ratingList = (NSArray *)[ratingDic objectForKey:@"Restaurants"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -122,8 +126,8 @@
     //NSLog(@"%@", [self.restaurantList objectAtIndex:indexPath.row]);
     self.jaControllerTitle = [self.restaurantList objectAtIndex:indexPath.row];
     self.jaControllerImage = [self.imageList objectAtIndex:indexPath.row];
-    
-
+    self.jaControllerRating = [self.ratingList objectAtIndex:indexPath.row];
+    //self.jaControllerIndexPath = [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) objectAtIndex:indexPath.row];
     
     if (self.delegate && [self.delegate respondsToSelector:@selector(selectedARestaurant:)])
     {

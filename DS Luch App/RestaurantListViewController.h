@@ -23,8 +23,11 @@
 @property (strong, nonatomic) IBOutlet NSString *restaurantName;
 @property (strong, nonatomic) NSString *jaControllerTitle;
 @property (strong, nonatomic) NSString *jaControllerImage;
+@property (strong, nonatomic) NSString *jaControllerIndexPath;
 @property (strong, nonatomic) NSArray *restaurantList;
 @property (strong, nonatomic) NSArray *imageList;
+@property (strong, nonatomic) NSArray *ratingList;
+@property (strong, nonatomic) NSNumber *jaControllerRating;
 
 - (IBAction)sortByName:(id)sender;
 - (IBAction)sortByRating:(id)sender;
