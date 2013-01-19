@@ -199,7 +199,7 @@ F-S: 1-6</string>
                                 <rect key="frame" x="0.0" y="-1" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="Title" id="b92-mQ-Sdy">
+                                    <navigationItem id="b92-mQ-Sdy">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="ebR-0k-9Hm">
                                             <connections>
                                                 <action selector="backButtonHit:" destination="2" id="I5P-cm-MWU"/>
@@ -219,6 +219,7 @@ F-S: 1-6</string>
                         <outlet property="fiveStarButton" destination="2Iz-Tg-6hg" id="DnN-Gh-kWs"/>
                         <outlet property="fourStarButton" destination="ScH-Iu-F7r" id="VJz-Ru-BX4"/>
                         <outlet property="navBar" destination="b92-mQ-Sdy" id="S7F-ms-pwq"/>
+                        <outlet property="navigationBar" destination="bTk-34-nVM" id="TcX-O1-NGW"/>
                         <outlet property="oneStarButton" destination="1qU-7C-DFx" id="0II-2R-Z4H"/>
                         <outlet property="restaurantImage" destination="14C-su-JP9" id="mUv-Za-Hco"/>
                         <outlet property="threeStarButton" destination="Xw7-o7-wSB" id="5Hx-of-XHZ"/>

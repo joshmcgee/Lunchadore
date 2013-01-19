@@ -124,14 +124,11 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     //NSLog(@"%@", [self.restaurantList objectAtIndex:indexPath.row]);
-    self.jaControllerTitle = [self.restaurantList objectAtIndex:indexPath.row];
-    self.jaControllerImage = [self.imageList objectAtIndex:indexPath.row];
-    self.jaControllerRating = [self.ratingList objectAtIndex:indexPath.row];
     //self.jaControllerIndexPath = [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) objectAtIndex:indexPath.row];
     
-    if (self.delegate && [self.delegate respondsToSelector:@selector(selectedARestaurant:)])
+    if (self.delegate && [self.delegate respondsToSelector:@selector(selectedARestaurant:restaurantName:rating:imageString:indexPathString:)])
     {
-        [self.delegate selectedARestaurant:self];
+        [self.delegate selectedARestaurant:self restaurantName:[self.restaurantList objectAtIndex:indexPath.row] rating:[self.ratingList objectAtIndex:indexPath.row] imageString:[self.imageList objectAtIndex:indexPath.row] indexPathString:nil];
     }
 }
 

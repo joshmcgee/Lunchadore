@@ -21,13 +21,13 @@
 @property (strong, nonatomic) IBOutlet UIButton *sortByRatingButton;
 @property (strong, nonatomic) IBOutlet UIButton *sortByTimeButton;
 @property (strong, nonatomic) IBOutlet NSString *restaurantName;
-@property (strong, nonatomic) NSString *jaControllerTitle;
-@property (strong, nonatomic) NSString *jaControllerImage;
-@property (strong, nonatomic) NSString *jaControllerIndexPath;
-@property (strong, nonatomic) NSArray *restaurantList;
-@property (strong, nonatomic) NSArray *imageList;
-@property (strong, nonatomic) NSArray *ratingList;
-@property (strong, nonatomic) NSNumber *jaControllerRating;
+//@property (strong, nonatomic) IBOutlet NSString *jaControllerTitle;
+//@property (strong, nonatomic) IBOutlet NSString *jaControllerImage;
+//@property (strong, nonatomic) IBOutlet NSString *jaControllerIndexPath;
+@property (strong, nonatomic) IBOutlet NSArray *restaurantList;
+@property (strong, nonatomic) IBOutlet NSArray *imageList;
+@property (strong, nonatomic) IBOutlet NSArray *ratingList;
+//@property (strong, nonatomic) IBOutlet NSNumber *jaControllerRating;
 
 - (IBAction)sortByName:(id)sender;
 - (IBAction)sortByRating:(id)sender;
@@ -40,6 +40,6 @@
 @protocol RestaurantListViewControllerDelegate <NSObject>
 
 @optional
-- (void)selectedARestaurant:(RestaurantListViewController *) viewController;
+- (void)selectedARestaurant:(RestaurantListViewController *) viewController restaurantName:(NSString *)name rating:(NSNumber *) rating imageString:(NSString *) imageString indexPathString:(NSString *)indexPathString;
 
 @end

@@ -829,24 +829,23 @@
 //    [self toggleLeftPanel:self];
 //}
 
-- (void)selectedARestaurant:(RestaurantListViewController *) viewController
+- (void)selectedARestaurant:(RestaurantListViewController *)viewController restaurantName:(NSString *)name rating:(NSNumber *)rating imageString:(NSString *)imageString indexPathString:(NSString *)indexPathString
 {
-    
-    NSString *imageName = self.leftPanel.jaControllerImage;
+    NSLog(@"THE RESTURANT NAME IS => %@", name);
     
     self.detailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"RestaurantDetail"];
     self.detailViewController.delegate = self;
     
-    self.detailViewController.navBar.title = self.leftPanel.jaControllerTitle;
-    self.detailViewController.rating = self.leftPanel.jaControllerRating;
+    self.detailViewController.title = name;
+    self.detailViewController.rating = rating;
     //self.detailViewController.ratingIndex = self.leftPanel.jaControllerIndexPath;
     
     [self.navigationController pushViewController:self.detailViewController animated:YES];
     
-    self.detailViewController.restaurantImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.jpg", imageName]];
+    self.detailViewController.restaurantImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.jpg", imageString]];
 }
 
-- (void)hitBackButtonOnDetailViewController:(RestaurantDetailViewController *) viewController
+- (void)hitBackButtonOnDetailViewController:(RestaurantDetailViewController *)viewController 
 {
     self.leftDetailView = YES;
     [self.navigationController popViewControllerAnimated:YES];

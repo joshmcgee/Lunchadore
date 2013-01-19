@@ -52,11 +52,16 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [self setup];
+   // [self.navBar setTitle:@"hello"];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    
+    self.navBar = [self.navigationBar.items objectAtIndex:0];
+    self.navBar.title = self.title;
     
 }
 
@@ -130,7 +135,6 @@
     }
     else if ([rating intValue] == 2)
     {
-        
         [self.oneStarButton setImage:self.starImage forState:UIControlStateNormal];
         [self.twoStarButton setImage:self.starImage forState:UIControlStateNormal];
         [self.threeStarButton setImage:self.starImageOutline forState:UIControlStateNormal];
