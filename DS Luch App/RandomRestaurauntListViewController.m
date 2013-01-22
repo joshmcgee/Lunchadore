@@ -42,6 +42,7 @@
 {
     [super didReceiveMemoryWarning];
 }
+
 - (IBAction)toggleSpinner:(id)sender
 {
 //    int randomNum = random() % [self.restaurantList count];
@@ -58,17 +59,18 @@
 
 #pragma mark - Picker view data source
 
-- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
-    
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
     return 1;
 }
 
-- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+{
     return [self.restaurantList count];
 }
 
-- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
     return self.restaurantList[row];
 }
 

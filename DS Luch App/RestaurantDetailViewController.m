@@ -52,7 +52,6 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [self setup];
-   // [self.navBar setTitle:@"hello"];
 }
 
 - (void)viewDidLoad
@@ -83,12 +82,12 @@
 - (IBAction)chooseButtonHit:(id)sender
 {
     MFMailComposeViewController *composer = [[MFMailComposeViewController alloc] init];
-    NSString *title = @"testing lunchadore";//[NSString stringWithFormat:@"<insert name here> is heading to %@", self.title];
+    NSString *title = [NSString stringWithFormat:@"<insert name here> is heading to %@", self.title];
     [composer setMailComposeDelegate:self];
     
     if ([MFMailComposeViewController canSendMail])
     {
-        NSString *message = [NSString stringWithFormat:@"I am heading to %@ for lunch, would you like to join me?", self.title];
+        NSString *message = [NSString stringWithFormat:@"I am going to %@ for lunch, would you like to join me?", self.title];
         NSMutableString *messageBodyText = [NSMutableString string];
         
         
@@ -194,7 +193,7 @@
 
 - (IBAction)fourStarButtonHit:(id)sender
 {
-    self.rating = [NSNumber numberWithInt:1];
+    self.rating = [NSNumber numberWithInt:4];
     [self ratingSystem:self.rating];
 }
 
@@ -206,7 +205,8 @@
 
 -(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
 {
-    if (error) {
+    if (error)
+    {
         NSString *message = @"Can't send message.";
         
         UIAlertView *mailAlert = [[UIAlertView alloc] initWithTitle:@"Please try again later."
@@ -217,9 +217,34 @@
         [mailAlert show];
         NSLog(@"%@",error);
         [self dismissViewControllerAnimated:YES completion:nil];
-    }else{
+    }
+    else
+    {
         [self dismissViewControllerAnimated:YES completion:nil];
     }
 }
+
+#pragma mark - tableview
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 7;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"idTagCell";
+    
+    RestaurantTagCell *cell = (RestaurantTagCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];//forIndexPath:indexPath];
+    //cell.nameLabel.text = [self.restaurantList objectAtIndex:indexPath.row];
+    
+    return cell;
+}
+
 
 @end

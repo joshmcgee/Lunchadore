@@ -841,11 +841,18 @@
     //self.detailViewController.ratingIndex = self.leftPanel.jaControllerIndexPath;
     
     [self.navigationController pushViewController:self.detailViewController animated:YES];
-    
-    self.detailViewController.restaurantImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.jpg", imageString]];
+    NSLog(@"imageString: %@", imageString);
+    if (![imageString isEqualToString:@""])
+    {
+        self.detailViewController.restaurantImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.jpg", imageString]];
+    }
+    else
+    {
+        self.detailViewController.restaurantImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"imageNotAvailable.png"]];
+    }
 }
 
-- (void)hitBackButtonOnDetailViewController:(RestaurantDetailViewController *)viewController 
+- (void)hitBackButtonOnDetailViewController:(RestaurantDetailViewController *)viewController
 {
     self.leftDetailView = YES;
     [self.navigationController popViewControllerAnimated:YES];

@@ -21,13 +21,9 @@
 @property (strong, nonatomic) IBOutlet UIButton *sortByRatingButton;
 @property (strong, nonatomic) IBOutlet UIButton *sortByTimeButton;
 @property (strong, nonatomic) IBOutlet NSString *restaurantName;
-//@property (strong, nonatomic) IBOutlet NSString *jaControllerTitle;
-//@property (strong, nonatomic) IBOutlet NSString *jaControllerImage;
-//@property (strong, nonatomic) IBOutlet NSString *jaControllerIndexPath;
 @property (strong, nonatomic) IBOutlet NSArray *restaurantList;
 @property (strong, nonatomic) IBOutlet NSArray *imageList;
 @property (strong, nonatomic) IBOutlet NSArray *ratingList;
-//@property (strong, nonatomic) IBOutlet NSNumber *jaControllerRating;
 
 - (IBAction)sortByName:(id)sender;
 - (IBAction)sortByRating:(id)sender;

@@ -19,7 +19,8 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
+    if (self)
+    {
         // Custom initialization
     }
     return self;
@@ -48,13 +49,19 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)sortByName:(id)sender {
+- (IBAction)sortByName:(id)sender
+{
+    
 }
 
-- (IBAction)sortByRating:(id)sender {
+- (IBAction)sortByRating:(id)sender
+{
+    
 }
 
-- (IBAction)sortByTime:(id)sender {
+- (IBAction)sortByTime:(id)sender
+{
+    
 }
 
 

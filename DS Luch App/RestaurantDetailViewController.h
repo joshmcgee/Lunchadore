@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <MessageUI/MessageUI.h>
 #import <MessageUI/MFMailComposeViewController.h>
+#import "RestaurantTagCell.h"
 
 @protocol RestaurantDetailViewControllerDelegate;
 
@@ -20,6 +21,7 @@
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *backButton;
 @property (strong, nonatomic) IBOutlet UINavigationItem *navBar;
 @property (strong, nonatomic) IBOutlet UINavigationBar *navigationBar;
+@property (weak, nonatomic) IBOutlet UITableView *tagTableView;
 @property (strong, nonatomic) IBOutlet UIImageView *restaurantImage;
 @property (strong, nonatomic) IBOutlet UIImage *starImage;
 @property (strong, nonatomic) IBOutlet UIImage *starImageOutline;
@@ -33,7 +35,6 @@
 @property (strong, nonatomic) IBOutlet NSArray *emailArray;
 @property (strong, nonatomic) IBOutlet NSNumber *rating;
 @property (strong, nonatomic) NSString *resturantTitle;
-//@property (strong, nonatomic) IBOutlet NSString *ratingIndex;
 
 - (IBAction)backButtonHit:(id)sender;
 - (IBAction)chooseButtonHit:(id)sender;
