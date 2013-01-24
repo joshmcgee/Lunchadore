@@ -145,6 +145,16 @@
 {
     [super viewDidLoad];
     
+
+    
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"signedUp"])
+    {
+        self.signUpViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"signUpViewcontroller"];
+        [self presentViewController:self.signUpViewController animated:YES completion:nil];
+        
+        self.signUpViewController.delegate = self;
+    }
+    
     self.view.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     
     self.centerPanelContainer = [[UIView alloc] initWithFrame:self.view.bounds];
@@ -626,15 +636,15 @@
     switch (self.state) {
         case JASidePanelCenterVisible:
         {
-            if (!self.leftDetailView)
-            {
-                frame.origin.y = -20.0f;
-                frame.size.height = self.view.bounds.size.height + 20;
-            }
-            else
-            {
+//            if (!self.leftDetailView)
+//            {
+//                frame.origin.y = -20.0f;
+//                frame.size.height = self.view.bounds.size.height + 20;
+//            }
+//            else
+//            {
                 frame.origin.y = 0.0f;
-            }
+//            }
             frame.origin.x = 0.0f;
             if (self.style == JASidePanelMultipleActive) {
                 frame.size.width = self.view.bounds.size.width;
@@ -643,15 +653,15 @@
 		}
         case JASidePanelLeftVisible:
         {
-            if (!self.leftDetailView)
-            {
-                frame.origin.y = -20.0f;
-                frame.size.height = self.view.bounds.size.height + 20;
-            }
-            else
-            {
+//            if (!self.leftDetailView)
+//            {
+//                frame.origin.y = -20.0f;
+//                frame.size.height = self.view.bounds.size.height + 20;
+//            }
+//            else
+//            {
                 frame.origin.y = 0.0f;
-            }
+//            }
             frame.origin.x = self.leftVisibleWidth;
             if (self.style == JASidePanelMultipleActive) {
                 frame.size.width = self.view.bounds.size.width - self.leftVisibleWidth;
@@ -860,5 +870,9 @@
     [self performSelector:@selector(toggleLeftPanel:) withObject:nil afterDelay:0.3f];
 }
 
+- (void)hitStartOnSignUp:(SignUpViewController *) viewController
+{
+    [self.signUpViewController dismissViewControllerAnimated:YES completion:nil];
+}
 
 @end

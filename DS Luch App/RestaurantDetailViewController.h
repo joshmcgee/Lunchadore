@@ -18,23 +18,23 @@
 @interface RestaurantDetailViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet id<RestaurantDetailViewControllerDelegate> delegate;
-@property (strong, nonatomic) IBOutlet UIBarButtonItem *backButton;
-@property (strong, nonatomic) IBOutlet UINavigationItem *navBar;
-@property (strong, nonatomic) IBOutlet UINavigationBar *navigationBar;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *backButton;
+@property (weak, nonatomic) IBOutlet UINavigationItem *navBar;
+@property (weak, nonatomic) IBOutlet UINavigationBar *navigationBar;
 @property (weak, nonatomic) IBOutlet UITableView *tagTableView;
-@property (strong, nonatomic) IBOutlet UIImageView *restaurantImage;
-@property (strong, nonatomic) IBOutlet UIImage *starImage;
-@property (strong, nonatomic) IBOutlet UIImage *starImageOutline;
+@property (weak, nonatomic) IBOutlet UIImageView *restaurantImage;
+@property (weak, nonatomic) IBOutlet UIImage *starImage;
+@property (weak, nonatomic) IBOutlet UIImage *starImageOutline;
 
-@property (strong, nonatomic) IBOutlet UIButton *chooseThisButton;
-@property (strong, nonatomic) IBOutlet UIButton *oneStarButton;
-@property (strong, nonatomic) IBOutlet UIButton *twoStarButton;
-@property (strong, nonatomic) IBOutlet UIButton *threeStarButton;
-@property (strong, nonatomic) IBOutlet UIButton *fourStarButton;
-@property (strong, nonatomic) IBOutlet UIButton *fiveStarButton;
-@property (strong, nonatomic) IBOutlet NSArray *emailArray;
-@property (strong, nonatomic) IBOutlet NSNumber *rating;
-@property (strong, nonatomic) NSString *resturantTitle;
+@property (weak, nonatomic) IBOutlet UIButton *chooseThisButton;
+@property (weak, nonatomic) IBOutlet UIButton *oneStarButton;
+@property (weak, nonatomic) IBOutlet UIButton *twoStarButton;
+@property (weak, nonatomic) IBOutlet UIButton *threeStarButton;
+@property (weak, nonatomic) IBOutlet UIButton *fourStarButton;
+@property (weak, nonatomic) IBOutlet UIButton *fiveStarButton;
+@property (strong, nonatomic) NSArray *emailArray;
+@property (assign, nonatomic) NSNumber *rating;
+@property (assign, nonatomic) NSString *resturantTitle;
 
 - (IBAction)backButtonHit:(id)sender;
 - (IBAction)chooseButtonHit:(id)sender;

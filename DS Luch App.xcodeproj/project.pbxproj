@@ -10,6 +10,9 @@
 		A50A1FF7169DE7AA003DB6A6 /* RandomRestaurauntListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A50A1FF6169DE7AA003DB6A6 /* RandomRestaurauntListViewController.m */; };
 		A50A1FF8169DEC40003DB6A6 /* JASidePanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = A50A1F8F169DE297003DB6A6 /* JASidePanelController.m */; };
 		A50A1FFA169DED55003DB6A6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A50A1FF9169DED55003DB6A6 /* QuartzCore.framework */; };
+		A52B61F116B19660006C882D /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A52B61F016B19660006C882D /* SignUpViewController.m */; };
+		A52B620316B1A602006C882D /* EmailListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A52B620216B1A602006C882D /* EmailListCell.m */; };
+		A52B620716B1A661006C882D /* EmailListAddCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A52B620616B1A661006C882D /* EmailListAddCell.m */; };
 		A52C4CEA16A8A63C0019B615 /* restaurantRatingList.plist in Resources */ = {isa = PBXBuildFile; fileRef = A52C4CE916A8A63C0019B615 /* restaurantRatingList.plist */; };
 		A57C196D16AEE49300215DC4 /* RestaurantTagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A57C196C16AEE49300215DC4 /* RestaurantTagCell.m */; };
 		A5953DEB16AF3526005677D9 /* imageNotAvailable.png in Resources */ = {isa = PBXBuildFile; fileRef = A5953DEA16AF3526005677D9 /* imageNotAvailable.png */; };
@@ -88,6 +91,12 @@
 		A50A1FF5169DE7AA003DB6A6 /* RandomRestaurauntListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RandomRestaurauntListViewController.h; sourceTree = "<group>"; };
 		A50A1FF6169DE7AA003DB6A6 /* RandomRestaurauntListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RandomRestaurauntListViewController.m; sourceTree = "<group>"; };
 		A50A1FF9169DED55003DB6A6 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		A52B61EF16B19660006C882D /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
+		A52B61F016B19660006C882D /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
+		A52B620116B1A602006C882D /* EmailListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmailListCell.h; sourceTree = "<group>"; };
+		A52B620216B1A602006C882D /* EmailListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmailListCell.m; sourceTree = "<group>"; };
+		A52B620516B1A661006C882D /* EmailListAddCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmailListAddCell.h; sourceTree = "<group>"; };
+		A52B620616B1A661006C882D /* EmailListAddCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmailListAddCell.m; sourceTree = "<group>"; };
 		A52C4CE916A8A63C0019B615 /* restaurantRatingList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = restaurantRatingList.plist; sourceTree = "<group>"; };
 		A57C196B16AEE49300215DC4 /* RestaurantTagCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantTagCell.h; sourceTree = "<group>"; };
 		A57C196C16AEE49300215DC4 /* RestaurantTagCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantTagCell.m; sourceTree = "<group>"; };
@@ -267,8 +276,8 @@
 				CBD4F253169738FC00C44D2F /* RestaurantDetailViewController.m */,
 				A50A1FF5169DE7AA003DB6A6 /* RandomRestaurauntListViewController.h */,
 				A50A1FF6169DE7AA003DB6A6 /* RandomRestaurauntListViewController.m */,
-				A57C196B16AEE49300215DC4 /* RestaurantTagCell.h */,
-				A57C196C16AEE49300215DC4 /* RestaurantTagCell.m */,
+				A52B61EF16B19660006C882D /* SignUpViewController.h */,
+				A52B61F016B19660006C882D /* SignUpViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -285,8 +294,14 @@
 		CBD4F25916973B7B00C44D2F /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				A57C196B16AEE49300215DC4 /* RestaurantTagCell.h */,
+				A57C196C16AEE49300215DC4 /* RestaurantTagCell.m */,
+				A52B620116B1A602006C882D /* EmailListCell.h */,
+				A52B620216B1A602006C882D /* EmailListCell.m */,
 				CBD4F25A16973B9800C44D2F /* RestaurantListCell.h */,
 				CBD4F25B16973B9800C44D2F /* RestaurantListCell.m */,
+				A52B620516B1A661006C882D /* EmailListAddCell.h */,
+				A52B620616B1A661006C882D /* EmailListAddCell.m */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -496,6 +511,9 @@
 				A50A1FF8169DEC40003DB6A6 /* JASidePanelController.m in Sources */,
 				CBD1DDC6169F29400032DEE6 /* CircularPickerView.m in Sources */,
 				A57C196D16AEE49300215DC4 /* RestaurantTagCell.m in Sources */,
+				A52B61F116B19660006C882D /* SignUpViewController.m in Sources */,
+				A52B620316B1A602006C882D /* EmailListCell.m in Sources */,
+				A52B620716B1A661006C882D /* EmailListAddCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

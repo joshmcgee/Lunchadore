@@ -16,11 +16,11 @@
 @interface RandomRestaurauntListViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet id<RandomRestaurauntListViewControllerDelegate> delegate;
-@property (strong, nonatomic) IBOutlet UIBarButtonItem *restaurauntListButton;
-@property (strong, nonatomic) IBOutlet UIPickerView *slotSpinner;
-@property (strong, nonatomic) IBOutlet UIButton *toggleSpinnerButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *restaurauntListButton;
+@property (weak, nonatomic) IBOutlet UIPickerView *slotSpinner;
+@property (weak, nonatomic) IBOutlet UIButton *toggleSpinnerButton;
 @property (strong, nonatomic) NSArray *restaurantList;
-@property (strong, nonatomic) NSString *restaurantName;
+@property (assign, nonatomic) NSString *restaurantName;
 @property (assign, nonatomic) BOOL setListBarButtonToLeft;
 
 - (IBAction)restaurauntListButtonHit:(id)sender;

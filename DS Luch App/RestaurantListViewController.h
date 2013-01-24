@@ -16,14 +16,14 @@
 @interface RestaurantListViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet id<RestaurantListViewControllerDelegate> delegate;
-@property (strong, nonatomic) IBOutlet UITableView *listTableView;
-@property (strong, nonatomic) IBOutlet UIButton *sortByNameButton;
-@property (strong, nonatomic) IBOutlet UIButton *sortByRatingButton;
-@property (strong, nonatomic) IBOutlet UIButton *sortByTimeButton;
-@property (strong, nonatomic) IBOutlet NSString *restaurantName;
-@property (strong, nonatomic) IBOutlet NSArray *restaurantList;
-@property (strong, nonatomic) IBOutlet NSArray *imageList;
-@property (strong, nonatomic) IBOutlet NSArray *ratingList;
+@property (weak, nonatomic) IBOutlet UITableView *listTableView;
+@property (weak, nonatomic) IBOutlet UIButton *sortByNameButton;
+@property (weak, nonatomic) IBOutlet UIButton *sortByRatingButton;
+@property (weak, nonatomic) IBOutlet UIButton *sortByTimeButton;
+@property (assign, nonatomic) NSString *restaurantName;
+@property (strong, nonatomic) NSArray *restaurantList;
+@property (strong, nonatomic) NSArray *imageList;
+@property (strong, nonatomic) NSArray *ratingList;
 
 - (IBAction)sortByName:(id)sender;
 - (IBAction)sortByRating:(id)sender;

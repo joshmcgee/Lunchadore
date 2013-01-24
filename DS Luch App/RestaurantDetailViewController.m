@@ -20,11 +20,12 @@
     self.starImage = [UIImage imageNamed:@"2Star.png"];
     self.starImageOutline = [UIImage imageNamed:@"2StarSkeleton.png"];
     
-    // TEMP STRING
-    NSString *emailString = @"josh@dsmedialabs.com";
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSArray *tempArray = [defaults objectForKey:@"emailArray"];
+    //NSString *emailString = @"josh@dsmedialabs.com";
     
     
-    self.emailArray = [[NSArray alloc] initWithObjects:emailString, nil]; // Gary J: later we can do initWithArray: and pass in the emails from the account
+    self.emailArray = [[NSArray alloc] initWithArray:tempArray];
     
     [self ratingSystem:self.rating];
 }

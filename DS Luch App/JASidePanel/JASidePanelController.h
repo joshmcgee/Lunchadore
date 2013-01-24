@@ -28,6 +28,7 @@
 #import "RandomRestaurauntListViewController.h"
 #import "RestaurantListViewController.h"
 #import "RestaurantDetailViewController.h"
+#import "SignUpViewController.h"
 
 typedef enum _JASidePanelStyle {
     JASidePanelSingleActive = 0,
@@ -40,7 +41,7 @@ typedef enum _JASidePanelState {
     JASidePanelRightVisible
 } JASidePanelState;
 
-@interface JASidePanelController : UIViewController<UIGestureRecognizerDelegate, RestaurantListViewControllerDelegate, RandomRestaurauntListViewControllerDelegate>
+@interface JASidePanelController : UIViewController<UIGestureRecognizerDelegate, RestaurantListViewControllerDelegate, RandomRestaurauntListViewControllerDelegate, SignUpViewControllerDelegate>
 
 #pragma mark - Usage
 
@@ -48,11 +49,12 @@ typedef enum _JASidePanelState {
 @property (nonatomic, strong) IBOutlet RestaurantListViewController *leftPanel;   // optional
 @property (nonatomic, strong) IBOutlet UINavigationController *centerPanel; // required
 @property (nonatomic, strong) IBOutlet UIViewController *rightPanel;  // optional
+
 //@property (nonatomic, strong) IBOutlet RestaurantListViewController *restaurantListViewController;
 
 // Lunchadore
 @property (strong, nonatomic) RestaurantDetailViewController *detailViewController;
-
+@property (strong, nonatomic) SignUpViewController *signUpViewController;
 
 // show the panels
 - (void)showLeftPanel:(BOOL)animated;

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="kvi-KX-4YO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="FiR-7W-lnZ">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
@@ -261,6 +261,7 @@ F-S: 1-6</string>
         <scene sceneID="kcR-pE-AbS">
             <objects>
                 <navigationController definesPresentationContext="YES" navigationBarHidden="YES" id="FiR-7W-lnZ" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="HWE-hB-X2W"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="koN-1Y-2P6">
                         <autoresizingMask key="autoresizingMask"/>
@@ -351,44 +352,25 @@ F-S: 1-6</string>
             </objects>
             <point key="canvasLocation" x="-437" y="214"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="c4y-Ap-ZWt">
-            <objects>
-                <navigationController definesPresentationContext="YES" id="kvi-KX-4YO" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bhz-4h-vOS">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="dQF-3w-tLc" kind="relationship" relationship="rootViewController" id="ckn-71-wur"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pwR-TV-Bqs" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1426" y="942"/>
-        </scene>
-        <!--View Controller - Sign Up-->
+        <!--Sign Up View Controller - Sign Up-->
         <scene sceneID="ELM-F6-hzc">
             <objects>
-                <viewController id="dQF-3w-tLc" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="signUpViewcontroller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dQF-3w-tLc" customClass="SignUpViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KCk-XW-mIz">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0ea-iB-oqP">
-                                <rect key="frame" x="135" y="17" width="51" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" minimumFontSize="17" id="ava-wq-1Oe">
-                                <rect key="frame" x="50" y="46" width="220" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Name:" minimumFontSize="17" id="ava-wq-1Oe">
+                                <rect key="frame" x="50" y="88" width="220" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="dQF-3w-tLc" id="j2f-FC-Ygb"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="F4k-GF-vyv">
-                                <rect key="frame" x="106" y="364" width="109" height="33"/>
+                                <rect key="frame" x="106" y="408" width="109" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Start Eating">
@@ -398,42 +380,94 @@ F-S: 1-6</string>
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="startButtonHit:" destination="dQF-3w-tLc" eventType="touchUpInside" id="0Tv-B4-WWJ"/>
+                                </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="RKu-hX-anW">
-                                <rect key="frame" x="50" y="123" width="220" height="230"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" id="Wey-0n-A8N">
-                                        <rect key="frame" x="0.0" y="22" width="220" height="44"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="220" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" id="0p1-qg-aB3">
-                                                    <rect key="frame" x="0.0" y="7" width="220" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Email:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RN6-hZ-bNo">
-                                <rect key="frame" x="136" y="94" width="48" height="21"/>
+                            <view contentMode="scaleToFill" id="Thi-nZ-sjQ">
+                                <rect key="frame" x="41" y="148" width="238" height="247"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="RKu-hX-anW">
+                                        <rect key="frame" x="9" y="9" width="220" height="230"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="separatorColor" red="0.94748485329999999" green="0.85976709149999997" blue="0.097894342810000007" alpha="1" colorSpace="calibratedRGB"/>
+                                        <prototypes>
+                                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="" selectionStyle="blue" indentationWidth="10" reuseIdentifier="emailCell" id="Wey-0n-A8N" customClass="EmailListCell">
+                                                <rect key="frame" x="0.0" y="22" width="220" height="44"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                    <rect key="frame" x="0.0" y="0.0" width="220" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" id="0p1-qg-aB3">
+                                                            <rect key="frame" x="0.0" y="7" width="220" height="30"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <textInputTraits key="textInputTraits"/>
+                                                            <connections>
+                                                                <outlet property="delegate" destination="Wey-0n-A8N" id="pIJ-Sd-bxz"/>
+                                                            </connections>
+                                                        </textField>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dcP-U8-3Fk">
+                                                            <rect key="frame" x="0.0" y="11" width="220" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
+                                                <connections>
+                                                    <outlet property="emailLabel" destination="dcP-U8-3Fk" id="aBB-0P-zVe"/>
+                                                    <outlet property="emailTextField" destination="0p1-qg-aB3" id="f4Q-rn-ILa"/>
+                                                </connections>
+                                            </tableViewCell>
+                                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="" selectionStyle="blue" indentationWidth="10" reuseIdentifier="addEmailCell" id="eR5-hh-MUG" customClass="EmailListAddCell">
+                                                <rect key="frame" x="0.0" y="66" width="220" height="44"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                    <rect key="frame" x="0.0" y="0.0" width="220" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Add An Email Address" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jxa-si-Ruj">
+                                                            <rect key="frame" x="25" y="11" width="171" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
+                                            </tableViewCell>
+                                        </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="dQF-3w-tLc" id="5Ho-el-rHF"/>
+                                            <outlet property="delegate" destination="dQF-3w-tLc" id="YqQ-9J-5q6"/>
+                                        </connections>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.29864767079999999" green="0.67956895419999996" blue="0.95505819520000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <navigationBar contentMode="scaleToFill" id="L2j-Q0-0dX">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Sign Up" id="1cR-iE-2NK"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Sign Up" id="emD-Oe-VB6"/>
+                    <connections>
+                        <outlet property="emailTableView" destination="RKu-hX-anW" id="bAz-Tk-PIZ"/>
+                        <outlet property="nameTextField" destination="ava-wq-1Oe" id="P5D-er-ViJ"/>
+                        <outlet property="startButton" destination="F4k-GF-vyv" id="j3Y-0A-7Qy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Scd-DN-Kmc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -506,94 +540,6 @@ F-S: 1-6</string>
     <resources>
         <image name="4Star.png" width="242" height="48"/>
     </resources>
-    <classes>
-        <class className="CircularPickerView" superclassName="UIPickerView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CircularPickerView.h"/>
-        </class>
-        <class className="JASidePanelController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/JASidePanelController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="centerPanel" candidateClass="UINavigationController"/>
-                <relationship kind="outlet" name="leftPanel" candidateClass="RestaurantListViewController"/>
-                <relationship kind="outlet" name="rightPanel" candidateClass="UIViewController"/>
-            </relationships>
-        </class>
-        <class className="NSNumber" superclassName="NSValue">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSNumber.h"/>
-        </class>
-        <class className="NSValue" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSValue.h"/>
-        </class>
-        <class className="RandomRestaurauntListViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RandomRestaurauntListViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="restaurauntListButtonHit:"/>
-                <relationship kind="action" name="toggleSpinner:"/>
-                <relationship kind="outlet" name="delegate"/>
-                <relationship kind="outlet" name="restaurauntListButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="slotSpinner" candidateClass="UIPickerView"/>
-                <relationship kind="outlet" name="toggleSpinnerButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="RestaurantDetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RestaurantDetailViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="backButtonHit:"/>
-                <relationship kind="action" name="chooseButtonHit:"/>
-                <relationship kind="action" name="fiveStarButtonHit:"/>
-                <relationship kind="action" name="fourStarButtonHit:"/>
-                <relationship kind="action" name="oneStarButtonHit:"/>
-                <relationship kind="action" name="threeStarButtonHit:"/>
-                <relationship kind="action" name="twoStarButtonHit:"/>
-                <relationship kind="outlet" name="backButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="chooseThisButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="delegate"/>
-                <relationship kind="outlet" name="emailArray" candidateClass="NSArray"/>
-                <relationship kind="outlet" name="fiveStarButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="fourStarButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="navBar" candidateClass="UINavigationItem"/>
-                <relationship kind="outlet" name="navigationBar" candidateClass="UINavigationBar"/>
-                <relationship kind="outlet" name="oneStarButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="rating" candidateClass="NSNumber"/>
-                <relationship kind="outlet" name="restaurantImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="starImage" candidateClass="UIImage"/>
-                <relationship kind="outlet" name="starImageOutline" candidateClass="UIImage"/>
-                <relationship kind="outlet" name="tagTableView" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="threeStarButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="twoStarButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="RestaurantListCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RestaurantListCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="timeLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="RestaurantListViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RestaurantListViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="sortByName:"/>
-                <relationship kind="action" name="sortByRating:"/>
-                <relationship kind="action" name="sortByTime:"/>
-                <relationship kind="outlet" name="delegate"/>
-                <relationship kind="outlet" name="imageList" candidateClass="NSArray"/>
-                <relationship kind="outlet" name="listTableView" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="ratingList" candidateClass="NSArray"/>
-                <relationship kind="outlet" name="restaurantList" candidateClass="NSArray"/>
-                <relationship kind="outlet" name="restaurantName" candidateClass="NSString"/>
-                <relationship kind="outlet" name="sortByNameButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="sortByRatingButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="sortByTimeButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="RestaurantTagCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RestaurantTagCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="tagCell" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

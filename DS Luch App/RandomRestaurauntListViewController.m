@@ -11,8 +11,8 @@
 
 @interface RandomRestaurauntListViewController ()
 
-@property (strong, nonatomic) UIBarButtonItem *storeListBarButton;
-@property (strong, nonatomic) UIButton *storeListButton;
+@property (weak, nonatomic) UIBarButtonItem *storeListBarButton;
+@property (weak, nonatomic) UIButton *storeListButton;
 
 @end
 
