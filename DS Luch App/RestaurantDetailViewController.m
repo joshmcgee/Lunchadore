@@ -10,6 +10,8 @@
 
 @interface RestaurantDetailViewController ()
 
+@property (assign, nonatomic)NSString *name;
+
 @end
 
 @implementation RestaurantDetailViewController
@@ -22,7 +24,7 @@
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSArray *tempArray = [defaults objectForKey:@"emailArray"];
-    //NSString *emailString = @"josh@dsmedialabs.com";
+    self.name = [defaults objectForKey:@"name"];
     
     
     self.emailArray = [[NSArray alloc] initWithArray:tempArray];
@@ -59,7 +61,6 @@
 {
     [super viewDidLoad];
     
-    
     self.navBar = [self.navigationBar.items objectAtIndex:0];
     self.navBar.title = self.title;
     
@@ -83,7 +84,7 @@
 - (IBAction)chooseButtonHit:(id)sender
 {
     MFMailComposeViewController *composer = [[MFMailComposeViewController alloc] init];
-    NSString *title = [NSString stringWithFormat:@"<insert name here> is heading to %@", self.title];
+    NSString *title = [NSString stringWithFormat:@"Testing Lunchadore, disregard"];//@"%@ is heading to %@", self.name, self.title];
     [composer setMailComposeDelegate:self];
     
     if ([MFMailComposeViewController canSendMail])

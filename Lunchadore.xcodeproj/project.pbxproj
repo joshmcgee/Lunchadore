@@ -17,6 +17,7 @@
 		A57C196D16AEE49300215DC4 /* RestaurantTagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A57C196C16AEE49300215DC4 /* RestaurantTagCell.m */; };
 		A5953DEB16AF3526005677D9 /* imageNotAvailable.png in Resources */ = {isa = PBXBuildFile; fileRef = A5953DEA16AF3526005677D9 /* imageNotAvailable.png */; };
 		A5AA4EC1169F1C360049B4DC /* restaurantList.plist in Resources */ = {isa = PBXBuildFile; fileRef = A5AA4EC0169F1C360049B4DC /* restaurantList.plist */; };
+		A5BB8DD716B99C4E00615C39 /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BB8DD616B99C4E00615C39 /* AccountViewController.m */; };
 		A5E4A99316A74421001EA47E /* restaurantImageList.plist in Resources */ = {isa = PBXBuildFile; fileRef = A5E4A99216A74421001EA47E /* restaurantImageList.plist */; };
 		A5E4A9C016A74FE6001EA47E /* arbys.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A5E4A99616A74FE6001EA47E /* arbys.jpg */; };
 		A5E4A9C116A74FE6001EA47E /* bonefishGrill.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A5E4A99716A74FE6001EA47E /* bonefishGrill.jpg */; };
@@ -102,6 +103,8 @@
 		A57C196C16AEE49300215DC4 /* RestaurantTagCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantTagCell.m; sourceTree = "<group>"; };
 		A5953DEA16AF3526005677D9 /* imageNotAvailable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = imageNotAvailable.png; path = food/imageNotAvailable.png; sourceTree = "<group>"; };
 		A5AA4EC0169F1C360049B4DC /* restaurantList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = restaurantList.plist; sourceTree = "<group>"; };
+		A5BB8DD516B99C4E00615C39 /* AccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountViewController.h; sourceTree = "<group>"; };
+		A5BB8DD616B99C4E00615C39 /* AccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountViewController.m; sourceTree = "<group>"; };
 		A5E4A99216A74421001EA47E /* restaurantImageList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = restaurantImageList.plist; sourceTree = "<group>"; };
 		A5E4A99616A74FE6001EA47E /* arbys.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = arbys.jpg; sourceTree = "<group>"; };
 		A5E4A99716A74FE6001EA47E /* bonefishGrill.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bonefishGrill.jpg; sourceTree = "<group>"; };
@@ -160,14 +163,14 @@
 		CBD4F2571697392E00C44D2F /* BasicTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicTableViewController.m; sourceTree = "<group>"; };
 		CBD4F25A16973B9800C44D2F /* RestaurantListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantListCell.h; sourceTree = "<group>"; };
 		CBD4F25B16973B9800C44D2F /* RestaurantListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantListCell.m; sourceTree = "<group>"; };
-		CBE443A916960FBB00F993A2 /* DS Luch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DS Luch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CBE443A916960FBB00F993A2 /* Lunchadore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lunchadore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBE443AD16960FBB00F993A2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CBE443AF16960FBB00F993A2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CBE443B116960FBB00F993A2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		CBE443B516960FBB00F993A2 /* DS Luch App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DS Luch App-Info.plist"; sourceTree = "<group>"; };
+		CBE443B516960FBB00F993A2 /* Lunchadore-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Lunchadore-Info.plist"; sourceTree = "<group>"; };
 		CBE443B716960FBB00F993A2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CBE443B916960FBB00F993A2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		CBE443BB16960FBB00F993A2 /* DS Luch App-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DS Luch App-Prefix.pch"; sourceTree = "<group>"; };
+		CBE443BB16960FBB00F993A2 /* Lunchadore-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Lunchadore-Prefix.pch"; sourceTree = "<group>"; };
 		CBE443BC16960FBB00F993A2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CBE443BD16960FBB00F993A2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		CBE443BF16960FBB00F993A2 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -278,6 +281,8 @@
 				A50A1FF6169DE7AA003DB6A6 /* RandomRestaurauntListViewController.m */,
 				A52B61EF16B19660006C882D /* SignUpViewController.h */,
 				A52B61F016B19660006C882D /* SignUpViewController.m */,
+				A5BB8DD516B99C4E00615C39 /* AccountViewController.h */,
+				A5BB8DD616B99C4E00615C39 /* AccountViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -318,7 +323,7 @@
 		CBE443AA16960FBB00F993A2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CBE443A916960FBB00F993A2 /* DS Luch App.app */,
+				CBE443A916960FBB00F993A2 /* Lunchadore.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -359,10 +364,10 @@
 				A5E4A99216A74421001EA47E /* restaurantImageList.plist */,
 				A5AA4EC0169F1C360049B4DC /* restaurantList.plist */,
 				A52C4CE916A8A63C0019B615 /* restaurantRatingList.plist */,
-				CBE443B516960FBB00F993A2 /* DS Luch App-Info.plist */,
+				CBE443B516960FBB00F993A2 /* Lunchadore-Info.plist */,
 				CBE443B616960FBB00F993A2 /* InfoPlist.strings */,
 				CBE443B916960FBB00F993A2 /* main.m */,
-				CBE443BB16960FBB00F993A2 /* DS Luch App-Prefix.pch */,
+				CBE443BB16960FBB00F993A2 /* Lunchadore-Prefix.pch */,
 				CBE443BF16960FBB00F993A2 /* Default.png */,
 				CBE443C116960FBB00F993A2 /* Default@2x.png */,
 				CBE443C316960FBB00F993A2 /* Default-568h@2x.png */,
@@ -385,9 +390,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CBE443A816960FBB00F993A2 /* DS Luch App */ = {
+		CBE443A816960FBB00F993A2 /* Lunchadore */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CBE443CD16960FBB00F993A2 /* Build configuration list for PBXNativeTarget "DS Luch App" */;
+			buildConfigurationList = CBE443CD16960FBB00F993A2 /* Build configuration list for PBXNativeTarget "Lunchadore" */;
 			buildPhases = (
 				CBE443A516960FBB00F993A2 /* Sources */,
 				CBE443A616960FBB00F993A2 /* Frameworks */,
@@ -397,9 +402,9 @@
 			);
 			dependencies = (
 			);
-			name = "DS Luch App";
+			name = Lunchadore;
 			productName = "DS Luch App";
-			productReference = CBE443A916960FBB00F993A2 /* DS Luch App.app */;
+			productReference = CBE443A916960FBB00F993A2 /* Lunchadore.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -411,7 +416,7 @@
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = DSMediaLabs;
 			};
-			buildConfigurationList = CBE443A316960FBB00F993A2 /* Build configuration list for PBXProject "DS Luch App" */;
+			buildConfigurationList = CBE443A316960FBB00F993A2 /* Build configuration list for PBXProject "Lunchadore" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -423,7 +428,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CBE443A816960FBB00F993A2 /* DS Luch App */,
+				CBE443A816960FBB00F993A2 /* Lunchadore */,
 			);
 		};
 /* End PBXProject section */
@@ -514,6 +519,7 @@
 				A52B61F116B19660006C882D /* SignUpViewController.m in Sources */,
 				A52B620316B1A602006C882D /* EmailListCell.m in Sources */,
 				A52B620716B1A661006C882D /* EmailListAddCell.m in Sources */,
+				A5BB8DD716B99C4E00615C39 /* AccountViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -592,9 +598,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "DS Luch App/DS Luch App-Prefix.pch";
-				INFOPLIST_FILE = "DS Luch App/DS Luch App-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "DS Luch App/Lunchadore-Prefix.pch";
+				INFOPLIST_FILE = "DS Luch App/Lunchadore-Info.plist";
+				PRODUCT_NAME = Lunchadore;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -603,9 +609,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "DS Luch App/DS Luch App-Prefix.pch";
-				INFOPLIST_FILE = "DS Luch App/DS Luch App-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "DS Luch App/Lunchadore-Prefix.pch";
+				INFOPLIST_FILE = "DS Luch App/Lunchadore-Info.plist";
+				PRODUCT_NAME = Lunchadore;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -613,7 +619,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CBE443A316960FBB00F993A2 /* Build configuration list for PBXProject "DS Luch App" */ = {
+		CBE443A316960FBB00F993A2 /* Build configuration list for PBXProject "Lunchadore" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CBE443CB16960FBB00F993A2 /* Debug */,
@@ -622,7 +628,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CBE443CD16960FBB00F993A2 /* Build configuration list for PBXNativeTarget "DS Luch App" */ = {
+		CBE443CD16960FBB00F993A2 /* Build configuration list for PBXNativeTarget "Lunchadore" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CBE443CE16960FBB00F993A2 /* Debug */,

@@ -180,7 +180,7 @@
 
     self.centerPanel = [self.storyboard instantiateViewControllerWithIdentifier:@"NavRandomRestaurauntList"];
     self.leftPanel = [self.storyboard instantiateViewControllerWithIdentifier:@"RestaurantList"];
-    //self.rightPanel = [self.storyboard instantiateViewControllerWithIdentifier:@"QuestJournalViewController"];
+    self.rightPanel = [self.storyboard instantiateViewControllerWithIdentifier:@"AccountViewController"];
     self.centerPanel.delegate = self;
     self.leftPanel.delegate = self;
     //self.centerPanel.setListBarButtonToLeft = YES;
@@ -636,15 +636,16 @@
     switch (self.state) {
         case JASidePanelCenterVisible:
         {
-//            if (!self.leftDetailView)
-//            {
-//                frame.origin.y = -20.0f;
-//                frame.size.height = self.view.bounds.size.height + 20;
-//            }
-//            else
-//            {
+            if ([[NSUserDefaults standardUserDefaults] boolForKey:@"signedUp"] && !self.leftDetailView)
+            {
+                frame.origin.y = -20.0f;
+                frame.size.height = self.view.bounds.size.height + 20;
+            }
+            else
+            {
                 frame.origin.y = 0.0f;
-//            }
+            }
+            
             frame.origin.x = 0.0f;
             if (self.style == JASidePanelMultipleActive) {
                 frame.size.width = self.view.bounds.size.width;
@@ -653,15 +654,16 @@
 		}
         case JASidePanelLeftVisible:
         {
-//            if (!self.leftDetailView)
-//            {
-//                frame.origin.y = -20.0f;
-//                frame.size.height = self.view.bounds.size.height + 20;
-//            }
-//            else
-//            {
+            
+            if ([[NSUserDefaults standardUserDefaults] boolForKey:@"signedUp"] && !self.leftDetailView)
+            {
+                frame.origin.y = -20.0f;
+                frame.size.height = self.view.bounds.size.height + 20;
+            }
+            else
+            {
                 frame.origin.y = 0.0f;
-//            }
+            }
             frame.origin.x = self.leftVisibleWidth;
             if (self.style == JASidePanelMultipleActive) {
                 frame.size.width = self.view.bounds.size.width - self.leftVisibleWidth;
@@ -670,6 +672,16 @@
 		}
         case JASidePanelRightVisible:
         {
+            if ([[NSUserDefaults standardUserDefaults] boolForKey:@"signedUp"] && !self.leftDetailView)
+            {
+                frame.origin.y = -20.0f;
+                frame.size.height = self.view.bounds.size.height + 20;
+            }
+            else
+            {
+                frame.origin.y = 0.0f;
+            }
+            
             frame.origin.x = -self.rightVisibleWidth;
             if (self.style == JASidePanelMultipleActive) {
                 frame.origin.x = 0.0f;
@@ -872,6 +884,7 @@
 
 - (void)hitStartOnSignUp:(SignUpViewController *) viewController
 {
+    self.leftDetailView = YES;
     [self.signUpViewController dismissViewControllerAnimated:YES completion:nil];
 }
 

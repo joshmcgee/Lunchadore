@@ -1,23 +1,21 @@
 //
-//  SignUpViewController.m
+//  AccountViewController.m
 //  DS Luch App
 //
-//  Created by Gary Johnston on 1/24/13.
+//  Created by Gary Johnston on 1/30/13.
 //  Copyright (c) 2013 DSMediaLabs. All rights reserved.
 //
 
-#import "SignUpViewController.h"
+#import "AccountViewController.h"
 
-@interface SignUpViewController ()
+@interface AccountViewController ()
 
 @property (assign, nonatomic)int spotInArray;
 @property (strong, nonatomic)EmailListCell *tempCell;
 
 @end
 
-
-
-@implementation SignUpViewController
+@implementation AccountViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -34,8 +32,13 @@
     
     self.spotInArray = 0;
     
-    self.emailArray = [[NSMutableArray alloc] init];
-    [self.emailArray addObject:@"josh@dsmedialabs.com"];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSArray *tempArray = [defaults objectForKey:@"emailArray"];
+    
+    self.emailArray = [[NSMutableArray alloc] initWithArray:tempArray];
+    
+    self.name = [defaults objectForKey:@"name"];
+    self.nameTextField.text = self.name;
 }
 
 - (void)didReceiveMemoryWarning
@@ -50,20 +53,14 @@
     return YES;
 }
 
-- (IBAction)startButtonHit:(id)sender
+- (IBAction)saveButtonHit:(id)sender
 {
-    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"signedUp"];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    
     [defaults setObject:self.emailArray forKey:@"emailArray"];
     
     if (![self.nameTextField.text isEqualToString:@""])
     {
         [defaults setObject:self.nameTextField.text forKey:@"name"];
-        if (self.delegate && [self.delegate respondsToSelector:@selector(hitStartOnSignUp:)])
-        {
-            [self.delegate hitStartOnSignUp:self];
-        }
     }
     else
     {
@@ -111,7 +108,6 @@
         
         return cell;
     }
-    
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -119,7 +115,7 @@
     NSLog(@"indexPath: %i", indexPath.row);
     if (indexPath.row == [self.emailArray count])
     {
-        if (![[self.emailArray objectAtIndex:indexPath.row-1] isEqualToString:@"enter new email"])
+        if (![[self.emailArray objectAtIndex:indexPath.row-1] isEqualToString:@"enter new email"]  && ![[self.emailArray objectAtIndex:indexPath.row-1] isEqualToString:@""])
         {
             [self.emailArray addObject:@"enter new email"];
             [self.emailTableView reloadData];
@@ -143,7 +139,9 @@
 
 - (void)alteredEmailAddressOnEmailListCell:(EmailListCell *) emailListCell
 {
-    self.emailArray[self.spotInArray] = self.tempCell.emailTextField.text;
+    if (![self.tempCell.emailTextField.text isEqualToString:@""])
+    {
+        self.emailArray[self.spotInArray] = self.tempCell.emailTextField.text;
+    }
 }
-
 @end
