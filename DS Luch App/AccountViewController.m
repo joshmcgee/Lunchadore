@@ -13,6 +13,10 @@
 @property (assign, nonatomic)int spotInArray;
 @property (strong, nonatomic)EmailListCell *tempCell;
 
+- (void)showAlert:(NSString *)message
+           result:(id)result
+            error:(NSError *)error;
+
 @end
 
 @implementation AccountViewController
@@ -66,6 +70,7 @@
     {
         NSLog(@"Hello, Nobody!");
     }
+    [self showAlert:nil result:nil error:nil];
 }
 
 #pragma mark - tableviews
@@ -144,4 +149,33 @@
         self.emailArray[self.spotInArray] = self.tempCell.emailTextField.text;
     }
 }
+
+#pragma mark - alerts
+
+- (void)showAlert:(NSString *)message
+           result:(id)result
+            error:(NSError *)error {
+    
+    NSString *alertMsg;
+    NSString *alertTitle;
+    if (error)
+    {
+        alertMsg = error.localizedDescription;
+        alertTitle = @"Error";
+    }
+    else
+    {
+        alertMsg = @"You have saved your account information....";
+        alertTitle = @"Success!";
+    }
+    
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:alertTitle
+                                                        message:alertMsg
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+    [alertView show];
+}
+
+
 @end

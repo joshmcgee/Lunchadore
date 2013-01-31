@@ -111,7 +111,7 @@ F-S: 1-6</string>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" id="PuH-o9-Or6">
                                                     <rect key="frame" x="0.0" y="-1" width="127" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" red="0.2986476707686625" green="0.67956895422809027" blue="0.95505819515306123" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
@@ -220,7 +220,7 @@ F-S: 1-6</string>
                                 </items>
                             </navigationBar>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Restaurant Name" id="NmJ-b3-tOR"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
@@ -264,7 +264,7 @@ F-S: 1-6</string>
                                         </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4Gc-i9-NFx">
-                                        <rect key="frame" x="73" y="358" width="109" height="44"/>
+                                        <rect key="frame" x="73" y="353" width="109" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Save">
@@ -347,7 +347,7 @@ F-S: 1-6</string>
                                         <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <navigationBar contentMode="scaleToFill" id="pK3-mx-EJ8">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -357,7 +357,7 @@ F-S: 1-6</string>
                                 </items>
                             </navigationBar>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="emailTableView" destination="Aw7-jh-kYX" id="ZxI-xA-mFU"/>
@@ -467,7 +467,7 @@ F-S: 1-6</string>
                                 </items>
                             </navigationBar>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="All Restaurants" id="CiH-sO-nIT"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
@@ -587,7 +587,7 @@ F-S: 1-6</string>
                                 </items>
                             </navigationBar>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Sign Up" id="emD-Oe-VB6"/>
                     <connections>
@@ -632,7 +632,7 @@ F-S: 1-6</string>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Lunchadore" id="k4z-hg-jix"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
@@ -667,112 +667,6 @@ F-S: 1-6</string>
     <resources>
         <image name="4Star.png" width="242" height="48"/>
     </resources>
-    <classes>
-        <class className="AccountViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AccountViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="saveButtonHit:"/>
-                <relationship kind="outlet" name="emailTableView" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="nameTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="saveButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="CircularPickerView" superclassName="UIPickerView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CircularPickerView.h"/>
-        </class>
-        <class className="EmailListAddCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/EmailListAddCell.h"/>
-        </class>
-        <class className="EmailListCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/EmailListCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="delegate"/>
-                <relationship kind="outlet" name="emailLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="emailTextField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="JASidePanelController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/JASidePanelController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="centerPanel" candidateClass="UINavigationController"/>
-                <relationship kind="outlet" name="leftPanel" candidateClass="RestaurantListViewController"/>
-                <relationship kind="outlet" name="rightPanel" candidateClass="UIViewController"/>
-            </relationships>
-        </class>
-        <class className="RandomRestaurauntListViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RandomRestaurauntListViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="restaurauntListButtonHit:"/>
-                <relationship kind="action" name="toggleSpinner:"/>
-                <relationship kind="outlet" name="delegate"/>
-                <relationship kind="outlet" name="restaurauntListButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="slotSpinner" candidateClass="UIPickerView"/>
-                <relationship kind="outlet" name="toggleSpinnerButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="RestaurantDetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RestaurantDetailViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="backButtonHit:"/>
-                <relationship kind="action" name="chooseButtonHit:"/>
-                <relationship kind="action" name="fiveStarButtonHit:"/>
-                <relationship kind="action" name="fourStarButtonHit:"/>
-                <relationship kind="action" name="oneStarButtonHit:"/>
-                <relationship kind="action" name="threeStarButtonHit:"/>
-                <relationship kind="action" name="twoStarButtonHit:"/>
-                <relationship kind="outlet" name="backButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="chooseThisButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="delegate"/>
-                <relationship kind="outlet" name="fiveStarButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="fourStarButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="navBar" candidateClass="UINavigationItem"/>
-                <relationship kind="outlet" name="navigationBar" candidateClass="UINavigationBar"/>
-                <relationship kind="outlet" name="oneStarButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="restaurantImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="starImage" candidateClass="UIImage"/>
-                <relationship kind="outlet" name="starImageOutline" candidateClass="UIImage"/>
-                <relationship kind="outlet" name="tagTableView" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="threeStarButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="twoStarButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="RestaurantListCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RestaurantListCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="timeLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="RestaurantListViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RestaurantListViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="sortByName:"/>
-                <relationship kind="action" name="sortByRating:"/>
-                <relationship kind="action" name="sortByTime:"/>
-                <relationship kind="outlet" name="delegate"/>
-                <relationship kind="outlet" name="listTableView" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="sortByNameButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="sortByRatingButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="sortByTimeButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="RestaurantTagCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RestaurantTagCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="tagCell" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="SignUpViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SignUpViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="startButtonHit:"/>
-                <relationship kind="outlet" name="delegate"/>
-                <relationship kind="outlet" name="emailTableView" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="nameTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="startButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

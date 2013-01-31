@@ -84,14 +84,16 @@
 - (IBAction)chooseButtonHit:(id)sender
 {
     MFMailComposeViewController *composer = [[MFMailComposeViewController alloc] init];
-    NSString *title = [NSString stringWithFormat:@"Testing Lunchadore, disregard"];//@"%@ is heading to %@", self.name, self.title];
+    NSString *title = [NSString stringWithFormat:@"Testing Lunchadore, disregard this email"];//@"%@ is heading to %@", self.name, self.title];
     [composer setMailComposeDelegate:self];
     
     if ([MFMailComposeViewController canSendMail])
     {
         NSString *message = [NSString stringWithFormat:@"I am going to %@ for lunch, would you like to join me?", self.title];
         NSMutableString *messageBodyText = [NSMutableString string];
-        
+        //UIImage *myImage = [UIImage imageNamed:@"mobiletuts-logo.png"];
+        NSData *imageData = UIImagePNGRepresentation(self.restaurantImage.image);
+        [composer addAttachmentData:imageData mimeType:@"image/png" fileName:@"restaurantImage"];
         
         // add HTML before the link here with line breaks (\n)
         NSString *formatString = [NSString stringWithFormat:@"<h1>%@</h1>\n", message];
@@ -211,6 +213,8 @@
     {
         NSString *message = @"Can't send message.";
         
+        
+
         UIAlertView *mailAlert = [[UIAlertView alloc] initWithTitle:@"Please try again later."
                                                     message:message
                                                    delegate:self

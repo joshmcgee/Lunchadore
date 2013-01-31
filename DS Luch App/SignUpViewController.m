@@ -13,6 +13,9 @@
 @property (assign, nonatomic)int spotInArray;
 @property (strong, nonatomic)EmailListCell *tempCell;
 
+- (void)showAlert:(NSString *)message
+           result:(id)result
+            error:(NSError *)error;
 @end
 
 
@@ -52,13 +55,15 @@
 
 - (IBAction)startButtonHit:(id)sender
 {
-    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"signedUp"];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
     [defaults setObject:self.emailArray forKey:@"emailArray"];
     
     if (![self.nameTextField.text isEqualToString:@""])
     {
+        
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"signedUp"];
+        
         [defaults setObject:self.nameTextField.text forKey:@"name"];
         if (self.delegate && [self.delegate respondsToSelector:@selector(hitStartOnSignUp:)])
         {
@@ -68,6 +73,7 @@
     else
     {
         NSLog(@"Hello, Nobody!");
+        [self showAlert:nil result:nil error:nil];
     }
 }
 
@@ -139,11 +145,41 @@
     }
 }
 
+#pragma mark - alerts
+
+- (void)showAlert:(NSString *)message
+           result:(id)result
+            error:(NSError *)error {
+    
+    NSString *alertMsg;
+    NSString *alertTitle;
+    if (error)
+    {
+        alertMsg = error.localizedDescription;
+        alertTitle = @"Error";
+    }
+    else
+    {
+        alertMsg = @"You must enter a name to continue....";
+        alertTitle = @"Failed!";
+    }
+    
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:alertTitle
+                                                        message:alertMsg
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+    [alertView show];
+}
+
+
 #pragma mark - delegates
 
 - (void)alteredEmailAddressOnEmailListCell:(EmailListCell *) emailListCell
 {
     self.emailArray[self.spotInArray] = self.tempCell.emailTextField.text;
 }
+
+
 
 @end
