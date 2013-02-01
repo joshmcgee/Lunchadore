@@ -9,9 +9,16 @@
 #import <UIKit/UIKit.h>
 #import "EmailListCell.h"
 #import "EmailListAddCell.h"
+#import "PopupViewController.h"
 
-@interface AccountViewController : UIViewController <UITextFieldDelegate, EmailListCellDelegate>
+@protocol AccountViewControllerDelegate;
 
+
+
+@interface AccountViewController : UIViewController <UITextFieldDelegate, EmailListCellDelegate, PopupViewControllerDelegate>
+
+@property (weak, nonatomic) id<AccountViewControllerDelegate> delegate;
+@property (strong, nonatomic) PopupViewController *popupViewController;
 @property (strong, nonatomic) EmailListCell *emailListCell;
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property (weak, nonatomic) IBOutlet UITableView *emailTableView;
@@ -20,5 +27,14 @@
 @property (strong, nonatomic) NSMutableArray *emailArray;
 
 - (IBAction)saveButtonHit:(id)sender;
+
+@end
+
+
+
+@protocol AccountViewControllerDelegate <NSObject>
+
+@optional
+- (void)hitTheSaveButtonOnAccountViewController:(AccountViewController *) account;
 
 @end

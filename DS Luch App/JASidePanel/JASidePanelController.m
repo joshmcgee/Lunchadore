@@ -181,6 +181,7 @@
     self.centerPanel = [self.storyboard instantiateViewControllerWithIdentifier:@"NavRandomRestaurauntList"];
     self.leftPanel = [self.storyboard instantiateViewControllerWithIdentifier:@"RestaurantList"];
     self.rightPanel = [self.storyboard instantiateViewControllerWithIdentifier:@"AccountViewController"];
+    self.rightPanel.delegate = self;
     self.centerPanel.delegate = self;
     self.leftPanel.delegate = self;
     //self.centerPanel.setListBarButtonToLeft = YES;
@@ -344,7 +345,7 @@
         [_leftPanel removeFromParentViewController];
         _leftPanel = leftPanel;
         [self addChildViewController:_leftPanel];
-        [self _placeButtonForLeftPanel];
+        //[self _placeButtonForLeftPanel];
     }
 }
 
@@ -545,7 +546,7 @@
 #pragma mark - Loading Panels
 
 - (void)_loadCenterPanel {
-    [self _placeButtonForLeftPanel];
+    //[self _placeButtonForLeftPanel];
     
     _centerPanel.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     _centerPanel.view.frame = self.centerPanelContainer.bounds;
@@ -800,7 +801,7 @@
         }
     } else if ([keyPath isEqualToString:@"viewControllers"] && object == self.centerPanel) {
         // view controllers have changed, need to replace the button
-        [self _placeButtonForLeftPanel];
+        //[self _placeButtonForLeftPanel];
     }
 }
 
@@ -843,13 +844,35 @@
     }
 }
 
+#pragma mark - popup
+- (void)createPopup
+{
+    PopupViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PopupViewController"];
+    viewController.delegate = self;
+    viewController.view.frame = self.view.bounds;
+    viewController.view.alpha = 0.0f;
+    
+    [self.view addSubview:viewController.view];
+    viewController.titleLabel.text = @"Success!";
+    viewController.messageLabel.text = @"Your Account Information Has Been Saved!";
+    self.popupViewController = viewController;
+    
+    [UIView animateWithDuration:0.3f animations:^{
+        viewController.view.alpha = 1.0f;
+    }];
+}
 
 #pragma mark - delegates
 
-//- (void)goToLeftJaSliderFromRandomRestaurauntListViewController:(RandomRestaurauntListViewController *) randomRestaurauntList
-//{
-//    [self toggleLeftPanel:self];
-//}
+- (void)hitOkOnThePopupViewController:(PopupViewController *)popup
+{
+    self.popupViewController = nil;
+}
+
+- (void)hitTheSaveButtonOnAccountViewController:(AccountViewController *) account
+{
+    [self createPopup];
+}
 
 - (void)selectedARestaurant:(RestaurantListViewController *)viewController restaurantName:(NSString *)name rating:(NSNumber *)rating imageString:(NSString *)imageString indexPathString:(NSString *)indexPathString
 {

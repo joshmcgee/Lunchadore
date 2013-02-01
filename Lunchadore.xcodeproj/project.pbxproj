@@ -14,6 +14,9 @@
 		A52B620316B1A602006C882D /* EmailListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A52B620216B1A602006C882D /* EmailListCell.m */; };
 		A52B620716B1A661006C882D /* EmailListAddCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A52B620616B1A661006C882D /* EmailListAddCell.m */; };
 		A52C4CEA16A8A63C0019B615 /* restaurantRatingList.plist in Resources */ = {isa = PBXBuildFile; fileRef = A52C4CE916A8A63C0019B615 /* restaurantRatingList.plist */; };
+		A5464F4216BC342C00856DE6 /* PopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5464F4116BC342C00856DE6 /* PopupViewController.m */; };
+		A5464F4516BC3C2800856DE6 /* Lunchadore_Mascot_reversed.png in Resources */ = {isa = PBXBuildFile; fileRef = A5464F4316BC3C2800856DE6 /* Lunchadore_Mascot_reversed.png */; };
+		A5464F4616BC3C2800856DE6 /* Lunchadore_Mascot.png in Resources */ = {isa = PBXBuildFile; fileRef = A5464F4416BC3C2800856DE6 /* Lunchadore_Mascot.png */; };
 		A57C196D16AEE49300215DC4 /* RestaurantTagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A57C196C16AEE49300215DC4 /* RestaurantTagCell.m */; };
 		A5953DEB16AF3526005677D9 /* imageNotAvailable.png in Resources */ = {isa = PBXBuildFile; fileRef = A5953DEA16AF3526005677D9 /* imageNotAvailable.png */; };
 		A5AA4EC1169F1C360049B4DC /* restaurantList.plist in Resources */ = {isa = PBXBuildFile; fileRef = A5AA4EC0169F1C360049B4DC /* restaurantList.plist */; };
@@ -99,6 +102,10 @@
 		A52B620516B1A661006C882D /* EmailListAddCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmailListAddCell.h; sourceTree = "<group>"; };
 		A52B620616B1A661006C882D /* EmailListAddCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmailListAddCell.m; sourceTree = "<group>"; };
 		A52C4CE916A8A63C0019B615 /* restaurantRatingList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = restaurantRatingList.plist; sourceTree = "<group>"; };
+		A5464F4016BC342C00856DE6 /* PopupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopupViewController.h; sourceTree = "<group>"; };
+		A5464F4116BC342C00856DE6 /* PopupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopupViewController.m; sourceTree = "<group>"; };
+		A5464F4316BC3C2800856DE6 /* Lunchadore_Mascot_reversed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Lunchadore_Mascot_reversed.png; path = ../../../Desktop/Lunchadore_Mascot_reversed.png; sourceTree = "<group>"; };
+		A5464F4416BC3C2800856DE6 /* Lunchadore_Mascot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Lunchadore_Mascot.png; path = ../../../Desktop/Lunchadore_Mascot.png; sourceTree = "<group>"; };
 		A57C196B16AEE49300215DC4 /* RestaurantTagCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantTagCell.h; sourceTree = "<group>"; };
 		A57C196C16AEE49300215DC4 /* RestaurantTagCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantTagCell.m; sourceTree = "<group>"; };
 		A5953DEA16AF3526005677D9 /* imageNotAvailable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = imageNotAvailable.png; path = food/imageNotAvailable.png; sourceTree = "<group>"; };
@@ -283,6 +290,8 @@
 				A52B61F016B19660006C882D /* SignUpViewController.m */,
 				A5BB8DD516B99C4E00615C39 /* AccountViewController.h */,
 				A5BB8DD616B99C4E00615C39 /* AccountViewController.m */,
+				A5464F4016BC342C00856DE6 /* PopupViewController.h */,
+				A5464F4116BC342C00856DE6 /* PopupViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -378,6 +387,8 @@
 		CBE443D016961D5A00F993A2 /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				A5464F4316BC3C2800856DE6 /* Lunchadore_Mascot_reversed.png */,
+				A5464F4416BC3C2800856DE6 /* Lunchadore_Mascot.png */,
 				CBE443D116961D6C00F993A2 /* 2Star.png */,
 				A5E4A9F016A76634001EA47E /* 2StarSkeleton.png */,
 				CBE443D216961D6C00F993A2 /* 4Star.png */,
@@ -495,6 +506,8 @@
 				A5E4A9F116A76634001EA47E /* 2StarSkeleton.png in Resources */,
 				A52C4CEA16A8A63C0019B615 /* restaurantRatingList.plist in Resources */,
 				A5953DEB16AF3526005677D9 /* imageNotAvailable.png in Resources */,
+				A5464F4516BC3C2800856DE6 /* Lunchadore_Mascot_reversed.png in Resources */,
+				A5464F4616BC3C2800856DE6 /* Lunchadore_Mascot.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,6 +533,7 @@
 				A52B620316B1A602006C882D /* EmailListCell.m in Sources */,
 				A52B620716B1A661006C882D /* EmailListAddCell.m in Sources */,
 				A5BB8DD716B99C4E00615C39 /* AccountViewController.m in Sources */,
+				A5464F4216BC342C00856DE6 /* PopupViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

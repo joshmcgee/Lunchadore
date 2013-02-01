@@ -25,7 +25,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    
+    [self random];
 }
 
 
@@ -45,15 +45,19 @@
 
 - (IBAction)toggleSpinner:(id)sender
 {
-//    int randomNum = random() % [self.restaurantList count];
-//    int currentRow = 0;
-//    
-//    for (; randomNum > 0; randomNum--)
-//    {
-//        [self.slotSpinner selectRow:currentRow inComponent:0 animated:YES];
-//        //[self.slotSpinner reloadComponent:0];
-//        currentRow += 1;
-//    }
+    [self random];
+}
+
+- (void)random
+{
+    int randomNum = arc4random() % [self.restaurantList count]+1;
+    int currentRow = arc4random() % [self.restaurantList count]+1;
+    
+    for (; randomNum > 0; randomNum--)
+    {
+        [self.slotSpinner selectRow:currentRow inComponent:0 animated:YES];
+        currentRow += 1;
+    }
 }
 
 
@@ -77,7 +81,7 @@
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
     // Hmmmm....
-    [self toggleSpinner:self];
+    //[self toggleSpinner:self];
     NSLog(@"MADE A SELECTION");
 }
 

@@ -29,6 +29,8 @@
 #import "RestaurantListViewController.h"
 #import "RestaurantDetailViewController.h"
 #import "SignUpViewController.h"
+#import "PopupViewController.h"
+#import "AccountViewController.h"
 
 typedef enum _JASidePanelStyle {
     JASidePanelSingleActive = 0,
@@ -41,20 +43,22 @@ typedef enum _JASidePanelState {
     JASidePanelRightVisible
 } JASidePanelState;
 
-@interface JASidePanelController : UIViewController<UIGestureRecognizerDelegate, RestaurantListViewControllerDelegate, RandomRestaurauntListViewControllerDelegate, SignUpViewControllerDelegate>
+@interface JASidePanelController : UIViewController<UIGestureRecognizerDelegate, RestaurantListViewControllerDelegate, RandomRestaurauntListViewControllerDelegate, SignUpViewControllerDelegate, PopupViewControllerDelegate, AccountViewControllerDelegate>
 
 #pragma mark - Usage
 
 // set the panels
 @property (nonatomic, strong) IBOutlet RestaurantListViewController *leftPanel;   // optional
 @property (nonatomic, strong) IBOutlet UINavigationController *centerPanel; // required
-@property (nonatomic, strong) IBOutlet UIViewController *rightPanel;  // optional
+@property (nonatomic, strong) IBOutlet AccountViewController *rightPanel;  // optional
 
 //@property (nonatomic, strong) IBOutlet RestaurantListViewController *restaurantListViewController;
 
 // Lunchadore
+@property (strong, nonatomic) PopupViewController *popupViewController;
 @property (strong, nonatomic) RestaurantDetailViewController *detailViewController;
 @property (strong, nonatomic) SignUpViewController *signUpViewController;
+//@property (strong, nonatomic) AccountViewController *accountViewController;
 
 // show the panels
 - (void)showLeftPanel:(BOOL)animated;

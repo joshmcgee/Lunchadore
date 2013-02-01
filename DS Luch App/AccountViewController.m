@@ -70,8 +70,13 @@
     {
         NSLog(@"Hello, Nobody!");
     }
-    [self showAlert:nil result:nil error:nil];
+    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(hitOkOnThePopupViewController:)])
+    {
+        [self.delegate hitTheSaveButtonOnAccountViewController:self];
+    }
 }
+
 
 #pragma mark - tableviews
 

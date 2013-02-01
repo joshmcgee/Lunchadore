@@ -72,9 +72,27 @@
     }
     else
     {
+        [self createPopup];
+        
         NSLog(@"Hello, Nobody!");
-        [self showAlert:nil result:nil error:nil];
     }
+}
+
+- (void)createPopup
+{
+    PopupViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PopupViewController"];
+    viewController.delegate = self;
+    viewController.view.frame = self.view.bounds;
+    viewController.view.alpha = 0.0f;
+    
+    [self.view addSubview:viewController.view];
+    viewController.titleLabel.text = @"UH-OH!";
+    viewController.messageLabel.text = @"You Must Enter Your Name Before You May Enter Lunchadore!";
+    self.popupViewController = viewController;
+    
+    [UIView animateWithDuration:0.3f animations:^{
+        viewController.view.alpha = 1.0f;
+    }];
 }
 
 #pragma mark - tableviews
@@ -180,6 +198,9 @@
     self.emailArray[self.spotInArray] = self.tempCell.emailTextField.text;
 }
 
-
+- (void)hitOkOnThePopupViewController:(PopupViewController *)popup
+{
+    self.popupViewController = nil;
+}
 
 @end
